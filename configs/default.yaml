@@ -1,0 +1,70 @@
+seed: 42
+corpus_path: data/corpus/enterprise_docs.jsonl
+questions_path: data/questions/enterprise_qa.jsonl
+output_dir: results/default
+chunk:
+  size_tokens: 24
+  overlap_tokens: 4
+cost_model:
+  retrieval_cost_per_chunk: 0.000000015
+  rerank_cost_per_document: 0.000004
+  dense_embedding_cost_per_query: 0.0000012
+  dense_embedding_latency_ms: 12.0
+  hybrid_dense_fusion_latency_ms: 4.0
+  retrieval_base_latency_ms: 35.0
+  retrieval_latency_per_chunk_ms: 1.8
+  retrieval_latency_per_topk_ms: 4.5
+  rerank_latency_per_document_ms: 18.0
+dense_retrieval:
+  provider: deterministic_hashing_embedding_v1
+  model_name: local_hashing_embedding_v1
+  embedding_dimension: 96
+  similarity: cosine
+  index: local_in_memory_exhaustive_scan
+  score_fusion: hybrid_dense = 0.56 * lexical_cosine + 0.44 * dense_cosine + 0.12 * phrase_overlap
+variants:
+  - name: lexical_k3
+    retriever: lexical
+    top_k: 3
+    rerank: false
+    generator: extractive_small
+  - name: lexical_k5
+    retriever: lexical
+    top_k: 5
+    rerank: false
+    generator: extractive_small
+  - name: lexical_k5_rerank
+    retriever: lexical
+    top_k: 5
+    rerank: true
+    generator: extractive_small
+  - name: hybrid_k5_rerank
+    retriever: hybrid
+    top_k: 5
+    rerank: true
+    generator: extractive_medium
+  - name: hybrid_k8_rerank
+    retriever: hybrid
+    top_k: 8
+    rerank: true
+    generator: extractive_medium
+  - name: hybrid_k10_large
+    retriever: hybrid
+    top_k: 10
+    rerank: true
+    generator: extractive_large
+  - name: dense_k5
+    retriever: dense
+    top_k: 5
+    rerank: false
+    generator: extractive_small
+  - name: dense_k5_rerank
+    retriever: dense
+    top_k: 5
+    rerank: true
+    generator: extractive_small
+  - name: hybrid_dense_k5_rerank
+    retriever: hybrid_dense
+    top_k: 5
+    rerank: true
+    generator: extractive_medium

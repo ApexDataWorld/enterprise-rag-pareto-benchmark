@@ -1,0 +1,126 @@
+{
+  "created_at_utc": "2026-05-10T18:16:30.189998+00:00",
+  "python": "3.13.3 (main, Apr  8 2025, 13:54:08) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "platform": "macOS-15.7.4-arm64-arm-64bit-Mach-O",
+  "git_commit": "b4f3d48e99d125c1f3bb9bb618ef2a97222432c5",
+  "config": {
+    "seed": 42,
+    "corpus_path": "data/corpus/enterprise_docs.jsonl",
+    "questions_path": "data/questions/enterprise_qa.jsonl",
+    "output_dir": "results/default",
+    "chunk": {
+      "size_tokens": 24,
+      "overlap_tokens": 4
+    },
+    "cost_model": {
+      "retrieval_cost_per_chunk": 1.5e-08,
+      "rerank_cost_per_document": 4e-06,
+      "dense_embedding_cost_per_query": 1.2e-06,
+      "dense_embedding_latency_ms": 12.0,
+      "hybrid_dense_fusion_latency_ms": 4.0,
+      "retrieval_base_latency_ms": 35.0,
+      "retrieval_latency_per_chunk_ms": 1.8,
+      "retrieval_latency_per_topk_ms": 4.5,
+      "rerank_latency_per_document_ms": 18.0
+    },
+    "dense_retrieval": {
+      "provider": "deterministic_hashing_embedding_v1",
+      "model_name": "local_hashing_embedding_v1",
+      "embedding_dimension": 96,
+      "similarity": "cosine",
+      "index": "local_in_memory_exhaustive_scan",
+      "score_fusion": "hybrid_dense = 0.56 * lexical_cosine + 0.44 * dense_cosine + 0.12 * phrase_overlap"
+    },
+    "variants": [
+      {
+        "name": "lexical_k3",
+        "retriever": "lexical",
+        "top_k": 3,
+        "rerank": false,
+        "generator": "extractive_small"
+      },
+      {
+        "name": "lexical_k5",
+        "retriever": "lexical",
+        "top_k": 5,
+        "rerank": false,
+        "generator": "extractive_small"
+      },
+      {
+        "name": "lexical_k5_rerank",
+        "retriever": "lexical",
+        "top_k": 5,
+        "rerank": true,
+        "generator": "extractive_small"
+      },
+      {
+        "name": "hybrid_k5_rerank",
+        "retriever": "hybrid",
+        "top_k": 5,
+        "rerank": true,
+        "generator": "extractive_medium"
+      },
+      {
+        "name": "hybrid_k8_rerank",
+        "retriever": "hybrid",
+        "top_k": 8,
+        "rerank": true,
+        "generator": "extractive_medium"
+      },
+      {
+        "name": "hybrid_k10_large",
+        "retriever": "hybrid",
+        "top_k": 10,
+        "rerank": true,
+        "generator": "extractive_large"
+      },
+      {
+        "name": "dense_k5",
+        "retriever": "dense",
+        "top_k": 5,
+        "rerank": false,
+        "generator": "extractive_small"
+      },
+      {
+        "name": "dense_k5_rerank",
+        "retriever": "dense",
+        "top_k": 5,
+        "rerank": true,
+        "generator": "extractive_small"
+      },
+      {
+        "name": "hybrid_dense_k5_rerank",
+        "retriever": "hybrid_dense",
+        "top_k": 5,
+        "rerank": true,
+        "generator": "extractive_medium"
+      }
+    ]
+  },
+  "artifacts": {
+    "results/default/tables/query_metrics.csv": "33ff9665a44051a55bc7feb30d79fba0a81de036f302159722757f0c64e938f8",
+    "results/default/tables/summary_metrics.csv": "432579a39f2e4b670bad294e3800a63a574375d9d59807a9bcd0849a549523c4",
+    "results/default/tables/statistical_comparisons.csv": "b9d8f8d7a9b3e59806b1e75004b48e5f3a7db0190e3d03e5d4f19c723c4ae93f",
+    "results/default/tables/confidence_intervals.csv": "366e32bf453509f61b6ee59cafd1ec5034e551f7c9274f81cf265fbdb8130751",
+    "results/default/tables/query_type_summary.csv": "5430722c0dd3d7791ba25e3d1b96d622f8381831b530824887760addf0d6cce3",
+    "results/default/tables/pareto_frontier_data.csv": "a5a35df24df14e892a208d56c7744b6e3cd5e5f90363c1179e2c0a3d84ce08cf",
+    "results/default/tables/final_latex_table_values.tex": "da13eef58c0db73d52dd5958b7a1eeaea272ad51669045478b7c1088ecf20c7c",
+    "results/default/final_result_summary.md": "75ae09ad924d6104592d217aac3cb4737b436042f9fd7fae6526899fbb94b38d",
+    "results/default/v3_consistency_notes.md": "2848df2f8e8808e013ade9f5aa183145df4fea542e98e988404900692963d12d",
+    "results/default/traces/retrieval_traces.json": "b28aabe7585a2db7b60c00029b37794f4b6188fd96577039e58480bf5da11086",
+    "results/default/figures/topk_sensitivity.svg": "67fda27353d0a9ad3b779e6c14228a976edcecc3e03c073420596d0a6a978806",
+    "results/default/figures/risk_vs_faithfulness.svg": "5f3ee6d2ed9abff2ab785e388e3a2b966f86c0fe3e3a348ff9cd200b589a9168",
+    "results/default/figures/reranker_impact.pdf": "1621110089f9d55d5f4a0d61a7e9f98e34feff0d1c201f2d288217615fd56e62",
+    "results/default/figures/topk_sensitivity.pdf": "6fc2eb5794de37e04316a834d226d18a03f1a7390e3a16d97e2b893a5ad82083",
+    "results/default/figures/risk_vs_faithfulness.pdf": "4b6607173415af92d71c769799e6a87870bf084a5d4af147787ecdeab0f52821",
+    "results/default/figures/reranker_impact.svg": "df3dd5d2b53c94ccc9e75f75b976da4dc27c8cb4f8a33c80ee3e3f17ee4ecbc7",
+    "results/default/figures/pareto_frontier.pdf": "0863aa101d5900ca27bcb95c5125266639eb92281007297ecd061d591af20355",
+    "results/default/figures/query_type_performance.pdf": "6b697520f28c90af42f12b063b0a5315f67f23d2b5df423889f32e7065b4601a",
+    "results/default/figures/cost_vs_quality.svg": "bc65ec910ce432f985c9dc4c584627fd198b7d8d77ff8703474a7162d3c2ec97",
+    "results/default/figures/latency_vs_quality.pdf": "49161fa08eace0f06c219abfd761af4ade5d90c4814d2522ab3e2e53bff95072",
+    "results/default/figures/pareto_frontier.svg": "7fd64dccf0c2add0cfe11267b8998e6245f5c0a90ea3fca94ad0983064b7c1b5",
+    "results/default/figures/query_type_performance.svg": "0f535b2333fde9e2dc410de2de5c8d4432ac8ac9f13ffb557cbe3872846b698a",
+    "results/default/figures/latency_vs_quality.svg": "45be6a8ce28f3d748eecae673d7f954ab96090d718b055751036a38164ece10d",
+    "results/default/figures/cost_vs_quality.pdf": "f299770b147cf9de400e0bbc6aef18fdf2995054fdf2e1e6595156ab8e453f0e"
+  }
+}
