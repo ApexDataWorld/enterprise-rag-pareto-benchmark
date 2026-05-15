@@ -1,0 +1,1499 @@
+{
+  "chunks": 72,
+  "queries": [
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q001",
+      "query_type": "fact_lookup",
+      "retrieved_chunk_ids": [
+        "legal-002::c000",
+        "rag-001::c000",
+        "sec-001::c000",
+        "hr-003::c001",
+        "ops-002::c001"
+      ],
+      "retrieved_doc_ids": [
+        "legal-002",
+        "rag-001",
+        "sec-001",
+        "hr-003",
+        "ops-002"
+      ],
+      "expected_doc_ids": [
+        "sec-001",
+        "rag-001"
+      ],
+      "expected_chunk_ids": [
+        "sec-001::c000",
+        "rag-001::c000"
+      ],
+      "answer": "when litigation hold is active deletion jobs pause for affected mailboxes contracts chat exports and rag audit logs legal must approve release before retention retrieval filters apply tenant role data classification region and document status before similarity search filters are evaluated before reranking so unauthorized chunks never reach enterprise systems enforce role based access control before retrieval finance roles can view invoices hr roles can view benefits legal roles can view contracts"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q002",
+      "query_type": "fact_lookup",
+      "retrieved_chunk_ids": [
+        "priv-001::c000",
+        "it-001::c000",
+        "legal-003::c000",
+        "legal-002::c000",
+        "priv-002::c001"
+      ],
+      "retrieved_doc_ids": [
+        "priv-001",
+        "it-001",
+        "legal-003",
+        "legal-002",
+        "priv-002"
+      ],
+      "expected_doc_ids": [
+        "priv-001"
+      ],
+      "expected_chunk_ids": [
+        "priv-001::c000"
+      ],
+      "answer": "personally identifiable information is redacted before embeddings are written to a vector store the service masks social security numbers bank accounts home addresses patient the vector index is rebuilt weekly and incrementally updated every six hours each build records corpus snapshot hash embedding model name chunking parameters index vendors processing enterprise data must sign a data use addendum the addendum limits training use requires breach notification within forty eight hours and permits"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q003",
+      "query_type": "stale_context",
+      "retrieved_chunk_ids": [
+        "ops-001::c001",
+        "ops-002::c000",
+        "rag-003::c000",
+        "rag-002::c000",
+        "hr-003::c001"
+      ],
+      "retrieved_doc_ids": [
+        "ops-001",
+        "ops-002",
+        "rag-003",
+        "rag-002",
+        "hr-003"
+      ],
+      "expected_doc_ids": [
+        "ops-001",
+        "ops-002"
+      ],
+      "expected_chunk_ids": [
+        "ops-001::c001",
+        "ops-002::c000"
+      ],
+      "answer": "engineer freezes index updates when hallucinated answers are tied to stale chunks if retrieved context is stale operators compare the answer timestamp with corpus snapshot time quarantine outdated chunks rebuild the affected index partition and publish generated answers include citations to retrieved chunks for policy finance legal and hr topics answers without supporting citations are marked unverified and excluded from"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q004",
+      "query_type": "fact_lookup",
+      "retrieved_chunk_ids": [
+        "fin-001::c000",
+        "fin-002::c000",
+        "vend-003::c000",
+        "legal-001::c000",
+        "vend-003::c001"
+      ],
+      "retrieved_doc_ids": [
+        "fin-001",
+        "fin-002",
+        "vend-003",
+        "legal-001",
+        "vend-003"
+      ],
+      "expected_doc_ids": [
+        "fin-001"
+      ],
+      "expected_chunk_ids": [
+        "fin-001::c000"
+      ],
+      "answer": "invoices above 50000 dollars require two approvals from the department owner and finance controller invoices below 50000 dollars require department owner approval emergency vendor travel expenses above policy limits need director approval and receipt evidence missing receipts are allowed only below 75 dollars repeated exceptions trigger finance review purchases above 100000 dollars require procurement review security approval legal approval and finance controller sign off pilot tools below 10000 dollars still requi"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q005",
+      "query_type": "fact_lookup",
+      "retrieved_chunk_ids": [
+        "hr-001::c000",
+        "hr-001::c001",
+        "gov-002::c001",
+        "sec-001::c000",
+        "it-003::c000"
+      ],
+      "retrieved_doc_ids": [
+        "hr-001",
+        "hr-001",
+        "gov-002",
+        "sec-001",
+        "it-003"
+      ],
+      "expected_doc_ids": [
+        "hr-001"
+      ],
+      "expected_chunk_ids": [
+        "hr-001::c000"
+      ],
+      "answer": "employees can change health benefits during open enrollment or after a qualifying life event qualifying events include marriage birth adoption loss of coverage and loss of coverage and relocation documentation is due within thirty days after seven days unless converted into a standard change"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q006",
+      "query_type": "compliance",
+      "retrieved_chunk_ids": [
+        "legal-001::c000",
+        "sec-003::c001",
+        "rag-002::c000",
+        "it-003::c000",
+        "sec-002::c000"
+      ],
+      "retrieved_doc_ids": [
+        "legal-001",
+        "sec-003",
+        "rag-002",
+        "it-003",
+        "sec-002"
+      ],
+      "expected_doc_ids": [
+        "legal-001"
+      ],
+      "expected_chunk_ids": [
+        "legal-001::c000"
+      ],
+      "answer": "executed customer contracts are retained for seven years after termination draft contracts are retained for two years litigation hold overrides the standard retention schedule cost and user role audit records are immutable and retained for eighteen months enterprise documents are chunked by section boundaries when available long tables use row groups chunks store source document id section title effective date classification"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q007",
+      "query_type": "fact_lookup",
+      "retrieved_chunk_ids": [
+        "it-001::c000",
+        "it-001::c001",
+        "fin-003::c000",
+        "fin-003::c001",
+        "cloud-003::c000"
+      ],
+      "retrieved_doc_ids": [
+        "it-001",
+        "it-001",
+        "fin-003",
+        "fin-003",
+        "cloud-003"
+      ],
+      "expected_doc_ids": [
+        "it-001"
+      ],
+      "expected_chunk_ids": [
+        "it-001::c000"
+      ],
+      "answer": "the vector index is rebuilt weekly and incrementally updated every six hours each build records corpus snapshot hash embedding model name chunking parameters index name chunking parameters index checksum and promotion decision monthly rag spend is charged to business units by query volume generation tokens embedding tokens reranking calls storage and vector index rebuilds shared platform"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q008",
+      "query_type": "policy_reasoning",
+      "retrieved_chunk_ids": [
+        "vend-002::c000",
+        "priv-001::c000",
+        "legal-002::c000",
+        "legal-002::c001",
+        "cloud-003::c001"
+      ],
+      "retrieved_doc_ids": [
+        "vend-002",
+        "priv-001",
+        "legal-002",
+        "legal-002",
+        "cloud-003"
+      ],
+      "expected_doc_ids": [
+        "eval-001"
+      ],
+      "expected_chunk_ids": [
+        "eval-001::c000"
+      ],
+      "answer": "approved vendors are monitored for latency availability data retention changes subprocessors breach notices and model deprecation critical vendor changes require architecture review before migration personally identifiable information is redacted before embeddings are written to a vector store the service masks social security numbers bank accounts home addresses patient when litigation hold is active deletion jobs pause for affected mailboxes contracts chat exports and rag audit logs legal must approve release bef"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q009",
+      "query_type": "cost_latency",
+      "retrieved_chunk_ids": [
+        "it-002::c000",
+        "fin-003::c000",
+        "it-002::c001",
+        "fin-003::c001",
+        "eval-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "it-002",
+        "fin-003",
+        "it-002",
+        "fin-003",
+        "eval-001"
+      ],
+      "expected_doc_ids": [
+        "it-002",
+        "fin-003"
+      ],
+      "expected_chunk_ids": [
+        "it-002::c000",
+        "fin-003::c000"
+      ],
+      "answer": "embedding cost is calculated per input token and generation cost per output token reranking adds a per document scoring charge reports group rag cost monthly rag spend is charged to business units by query volume generation tokens embedding tokens reranking calls storage and vector index rebuilds shared platform reports group rag cost by business unit retrieval strategy top k and generation model"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q010",
+      "query_type": "compliance",
+      "retrieved_chunk_ids": [
+        "sec-003::c000",
+        "sec-003::c001",
+        "legal-002::c000",
+        "rag-003::c001",
+        "rag-003::c000"
+      ],
+      "retrieved_doc_ids": [
+        "sec-003",
+        "sec-003",
+        "legal-002",
+        "rag-003",
+        "rag-003"
+      ],
+      "expected_doc_ids": [
+        "sec-003"
+      ],
+      "expected_chunk_ids": [
+        "sec-003::c000"
+      ],
+      "answer": "every rag answer stores query id retrieved document ids chunk ids model version prompt template version policy filters latency estimated cost and user role cost and user role audit records are immutable and retained for eighteen months when litigation hold is active deletion jobs pause for affected mailboxes contracts chat exports and rag audit logs legal must approve release before retention"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q011",
+      "query_type": "fact_lookup",
+      "retrieved_chunk_ids": [
+        "sec-002::c000",
+        "sec-002::c001",
+        "sec-001::c001",
+        "sec-001::c000",
+        "vend-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "sec-002",
+        "sec-002",
+        "sec-001",
+        "sec-001",
+        "vend-001"
+      ],
+      "expected_doc_ids": [
+        "sec-002"
+      ],
+      "expected_chunk_ids": [
+        "sec-002::c000"
+      ],
+      "answer": "privileged administrator access is reviewed every thirty days dormant accounts older than forty five days are disabled emergency elevation expires after four hours and after four hours and must include ticket id business justification and manager approval roles can view contracts and cross domain access requires governance approval plus immutable logging"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q012",
+      "query_type": "policy_reasoning",
+      "retrieved_chunk_ids": [
+        "priv-002::c000",
+        "cloud-001::c001",
+        "cloud-001::c000",
+        "sec-002::c001",
+        "sec-001::c001"
+      ],
+      "retrieved_doc_ids": [
+        "priv-002",
+        "cloud-001",
+        "cloud-001",
+        "sec-002",
+        "sec-001"
+      ],
+      "expected_doc_ids": [
+        "priv-002"
+      ],
+      "expected_chunk_ids": [
+        "priv-002::c000"
+      ],
+      "answer": "data is labeled public internal confidential or restricted restricted data requires encryption policy filtered retrieval redacted embeddings and quarterly access review public data may scanning and quarterly access review object storage buckets use customer managed encryption keys for confidential and restricted data public buckets require explicit approval logging malware scanning and quarterly access"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q013",
+      "query_type": "compliance",
+      "retrieved_chunk_ids": [
+        "hr-003::c000",
+        "priv-003::c000",
+        "hr-003::c001",
+        "sec-003::c001",
+        "ops-003::c001"
+      ],
+      "retrieved_doc_ids": [
+        "hr-003",
+        "priv-003",
+        "hr-003",
+        "sec-003",
+        "ops-003"
+      ],
+      "expected_doc_ids": [
+        "priv-003"
+      ],
+      "expected_chunk_ids": [
+        "priv-003::c000"
+      ],
+      "answer": "managers can view job related employee records for direct reports compensation history and medical accommodation files are restricted to hr specialists and are not european employee records remain in the eu region customer billing data remains in the contracted cloud region cross region replication requires privacy approval legal specialists and are not exposed to general rag retrieval"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q014",
+      "query_type": "fact_lookup",
+      "retrieved_chunk_ids": [
+        "fin-002::c000",
+        "priv-002::c000",
+        "hr-002::c001",
+        "priv-002::c001",
+        "rag-003::c000"
+      ],
+      "retrieved_doc_ids": [
+        "fin-002",
+        "priv-002",
+        "hr-002",
+        "priv-002",
+        "rag-003"
+      ],
+      "expected_doc_ids": [
+        "fin-002"
+      ],
+      "expected_chunk_ids": [
+        "fin-002::c000"
+      ],
+      "answer": "travel expenses above policy limits need director approval and receipt evidence missing receipts are allowed only below 75 dollars repeated exceptions trigger finance review data is labeled public internal confidential or restricted restricted data requires encryption policy filtered retrieval redacted embeddings and quarterly access review public data may and excluded from general search indexing"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q015",
+      "query_type": "multi_hop",
+      "retrieved_chunk_ids": [
+        "vend-003::c000",
+        "fin-001::c000",
+        "priv-003::c001",
+        "legal-003::c000",
+        "ops-002::c001"
+      ],
+      "retrieved_doc_ids": [
+        "vend-003",
+        "fin-001",
+        "priv-003",
+        "legal-003",
+        "ops-002"
+      ],
+      "expected_doc_ids": [
+        "vend-003",
+        "vend-001"
+      ],
+      "expected_chunk_ids": [
+        "vend-003::c000",
+        "vend-001::c000"
+      ],
+      "answer": "purchases above 100000 dollars require procurement review security approval legal approval and finance controller sign off pilot tools below 10000 dollars still require data invoices above 50000 dollars require two approvals from the department owner and finance controller invoices below 50000 dollars require department owner approval emergency vendor requires privacy approval legal review and a documented recovery objective"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q016",
+      "query_type": "compliance",
+      "retrieved_chunk_ids": [
+        "legal-002::c000",
+        "legal-001::c001",
+        "legal-001::c000",
+        "legal-002::c001",
+        "risk-002::c000"
+      ],
+      "retrieved_doc_ids": [
+        "legal-002",
+        "legal-001",
+        "legal-001",
+        "legal-002",
+        "risk-002"
+      ],
+      "expected_doc_ids": [
+        "legal-002"
+      ],
+      "expected_chunk_ids": [
+        "legal-002::c000"
+      ],
+      "answer": "when litigation hold is active deletion jobs pause for affected mailboxes contracts chat exports and rag audit logs legal must approve release before retention the standard retention schedule and prevents deletion until legal releases the hold executed customer contracts are retained for seven years after termination draft contracts are retained for two years litigation hold overrides the standard retention schedule"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q017",
+      "query_type": "vendor_risk",
+      "retrieved_chunk_ids": [
+        "legal-003::c000",
+        "legal-003::c001",
+        "vend-002::c000",
+        "vend-001::c000",
+        "priv-003::c001"
+      ],
+      "retrieved_doc_ids": [
+        "legal-003",
+        "legal-003",
+        "vend-002",
+        "vend-001",
+        "priv-003"
+      ],
+      "expected_doc_ids": [
+        "legal-003"
+      ],
+      "expected_chunk_ids": [
+        "legal-003::c000"
+      ],
+      "answer": "vendors processing enterprise data must sign a data use addendum the addendum limits training use requires breach notification within forty eight hours and permits eight hours and permits annual security evidence review approved vendors are monitored for latency availability data retention changes subprocessors breach notices and model deprecation critical vendor changes require architecture review before migration"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q018",
+      "query_type": "compliance",
+      "retrieved_chunk_ids": [
+        "hr-002::c001",
+        "hr-002::c000",
+        "rag-003::c000",
+        "rag-003::c001",
+        "hr-003::c001"
+      ],
+      "retrieved_doc_ids": [
+        "hr-002",
+        "hr-002",
+        "rag-003",
+        "rag-003",
+        "hr-003"
+      ],
+      "expected_doc_ids": [
+        "hr-002"
+      ],
+      "expected_chunk_ids": [
+        "hr-002::c001"
+      ],
+      "answer": "and excluded from general search indexing medical leave requests require hr intake manager notification expected return date and supporting documentation sensitive medical details are stored separately and excluded from general generated answers include citations to retrieved chunks for policy finance legal and hr topics answers without supporting citations are marked unverified and excluded from"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q019",
+      "query_type": "policy_reasoning",
+      "retrieved_chunk_ids": [
+        "hr-003::c000",
+        "sec-001::c001",
+        "sec-001::c000",
+        "hr-002::c000",
+        "ops-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "hr-003",
+        "sec-001",
+        "sec-001",
+        "hr-002",
+        "ops-001"
+      ],
+      "expected_doc_ids": [
+        "hr-003"
+      ],
+      "expected_chunk_ids": [
+        "hr-003::c001"
+      ],
+      "answer": "managers can view job related employee records for direct reports compensation history and medical accommodation files are restricted to hr specialists and are not roles can view contracts and cross domain access requires governance approval plus immutable logging enterprise systems enforce role based access control before retrieval finance roles can view invoices hr roles can view benefits legal roles can view contracts"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q020",
+      "query_type": "cost_latency",
+      "retrieved_chunk_ids": [
+        "fin-003::c000",
+        "fin-003::c001",
+        "it-002::c001",
+        "it-002::c000",
+        "eval-001::c001"
+      ],
+      "retrieved_doc_ids": [
+        "fin-003",
+        "fin-003",
+        "it-002",
+        "it-002",
+        "eval-001"
+      ],
+      "expected_doc_ids": [
+        "fin-003"
+      ],
+      "expected_chunk_ids": [
+        "fin-003::c000"
+      ],
+      "answer": "monthly rag spend is charged to business units by query volume generation tokens embedding tokens reranking calls storage and vector index rebuilds shared platform index rebuilds shared platform cost is allocated by active application count reports group rag cost by business unit retrieval strategy top k and generation model"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q021",
+      "query_type": "cost_latency",
+      "retrieved_chunk_ids": [
+        "ops-003::c000",
+        "eval-001::c000",
+        "hr-003::c001",
+        "cloud-001::c001",
+        "sec-003::c000"
+      ],
+      "retrieved_doc_ids": [
+        "ops-003",
+        "eval-001",
+        "hr-003",
+        "cloud-001",
+        "sec-003"
+      ],
+      "expected_doc_ids": [
+        "ops-003"
+      ],
+      "expected_chunk_ids": [
+        "ops-003::c000"
+      ],
+      "answer": "the rag api targets p95 latency below 1200 milliseconds for standard queries and below 2000 milliseconds for reranked compliance queries error rate must stay rag releases require recall at k mean reciprocal rank normalized discounted cumulative gain context precision context recall faithfulness latency and estimated cost increased hallucination specialists and are not exposed to general rag retrieval"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q022",
+      "query_type": "cost_latency",
+      "retrieved_chunk_ids": [
+        "ops-003::c000",
+        "hr-003::c001",
+        "rag-003::c000",
+        "eval-002::c000",
+        "eval-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "ops-003",
+        "hr-003",
+        "rag-003",
+        "eval-002",
+        "eval-001"
+      ],
+      "expected_doc_ids": [
+        "ops-003"
+      ],
+      "expected_chunk_ids": [
+        "ops-003::c000"
+      ],
+      "answer": "the rag api targets p95 latency below 1200 milliseconds for standard queries and below 2000 milliseconds for reranked compliance queries error rate must stay specialists and are not exposed to general rag retrieval generated answers include citations to retrieved chunks for policy finance legal and hr topics answers without supporting citations are marked unverified and excluded from"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q023",
+      "query_type": "policy_reasoning",
+      "retrieved_chunk_ids": [
+        "eval-001::c001",
+        "gov-003::c000",
+        "legal-002::c000",
+        "risk-001::c000",
+        "vend-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "eval-001",
+        "gov-003",
+        "legal-002",
+        "risk-001",
+        "vend-001"
+      ],
+      "expected_doc_ids": [
+        "eval-001",
+        "gov-003"
+      ],
+      "expected_chunk_ids": [
+        "eval-001::c001",
+        "gov-003::c000"
+      ],
+      "answer": "estimated cost increased hallucination risk blocks release without exception a hallucination exception must document user impact root cause compensating controls expiration date and owner exceptions cannot be renewed if faithfulness or context recall when litigation hold is active deletion jobs pause for affected mailboxes contracts chat exports and rag audit logs legal must approve release before retention"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q024",
+      "query_type": "compliance",
+      "retrieved_chunk_ids": [
+        "eval-002::c000",
+        "eval-002::c001",
+        "vend-003::c001",
+        "vend-003::c000",
+        "sec-002::c001"
+      ],
+      "retrieved_doc_ids": [
+        "eval-002",
+        "eval-002",
+        "vend-003",
+        "vend-003",
+        "sec-002"
+      ],
+      "expected_doc_ids": [
+        "eval-002"
+      ],
+      "expected_chunk_ids": [
+        "eval-002::c000"
+      ],
+      "answer": "high risk answers receive human review sampling compliance medical payroll and legal answer categories require weekly review until two consecutive weeks meet faithfulness and weeks meet faithfulness and context precision thresholds dollars still require data classification review"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q025",
+      "query_type": "fact_lookup",
+      "retrieved_chunk_ids": [
+        "eval-003::c000",
+        "eval-003::c001",
+        "risk-001::c000",
+        "legal-003::c000",
+        "ops-003::c000"
+      ],
+      "retrieved_doc_ids": [
+        "eval-003",
+        "eval-003",
+        "risk-001",
+        "legal-003",
+        "ops-003"
+      ],
+      "expected_doc_ids": [
+        "eval-003"
+      ],
+      "expected_chunk_ids": [
+        "eval-003::c000"
+      ],
+      "answer": "benchmark runs must record fixed seeds dataset hash configuration file retriever variant model profile code commit execution time and artifact checksums for tables traces checksums for tables traces and figures accepted risks record scope business owner residual risk rating mitigation plan review date and expiration expired risks automatically return to open remediation status"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q026",
+      "query_type": "vendor_risk",
+      "retrieved_chunk_ids": [
+        "vend-001::c000",
+        "vend-002::c000",
+        "priv-002::c000",
+        "sec-002::c000",
+        "sec-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "vend-001",
+        "vend-002",
+        "priv-002",
+        "sec-002",
+        "sec-001"
+      ],
+      "expected_doc_ids": [
+        "vend-001"
+      ],
+      "expected_chunk_ids": [
+        "vend-001::c000"
+      ],
+      "answer": "new ai vendors complete security questionnaire data processing addendum subprocessor disclosure penetration test evidence and financial risk assessment before production data access is approved approved vendors are monitored for latency availability data retention changes subprocessors breach notices and model deprecation critical vendor changes require architecture review before migration data is labeled public internal confidential or restricted restricted data requires encryption policy filtered retrieval redact"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q027",
+      "query_type": "vendor_risk",
+      "retrieved_chunk_ids": [
+        "vend-002::c000",
+        "eval-002::c000",
+        "vend-001::c000",
+        "gov-002::c000",
+        "fin-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "vend-002",
+        "eval-002",
+        "vend-001",
+        "gov-002",
+        "fin-001"
+      ],
+      "expected_doc_ids": [
+        "vend-002"
+      ],
+      "expected_chunk_ids": [
+        "vend-002::c000"
+      ],
+      "answer": "approved vendors are monitored for latency availability data retention changes subprocessors breach notices and model deprecation critical vendor changes require architecture review before migration high risk answers receive human review sampling compliance medical payroll and legal answer categories require weekly review until two consecutive weeks meet faithfulness and new ai vendors complete security questionnaire data processing addendum subprocessor disclosure penetration test evidence and financial risk asses"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q028",
+      "query_type": "policy_reasoning",
+      "retrieved_chunk_ids": [
+        "gov-003::c000",
+        "eval-003::c000",
+        "gov-001::c000",
+        "it-002::c001",
+        "ops-003::c000"
+      ],
+      "retrieved_doc_ids": [
+        "gov-003",
+        "eval-003",
+        "gov-001",
+        "it-002",
+        "ops-003"
+      ],
+      "expected_doc_ids": [
+        "gov-001"
+      ],
+      "expected_chunk_ids": [
+        "gov-001::c000"
+      ],
+      "answer": "a hallucination exception must document user impact root cause compensating controls expiration date and owner exceptions cannot be renewed if faithfulness or context recall benchmark runs must record fixed seeds dataset hash configuration file retriever variant model profile code commit execution time and artifact checksums for tables traces model releases need documented owner intended use evaluation evidence rollback plan privacy assessment and risk tier high risk models require governance board approval before"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q029",
+      "query_type": "policy_reasoning",
+      "retrieved_chunk_ids": [
+        "gov-002::c000",
+        "vend-002::c000",
+        "gov-002::c001",
+        "it-003::c001",
+        "legal-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "gov-002",
+        "vend-002",
+        "gov-002",
+        "it-003",
+        "legal-001"
+      ],
+      "expected_doc_ids": [
+        "gov-002"
+      ],
+      "expected_chunk_ids": [
+        "gov-002::c000"
+      ],
+      "answer": "prompt templates are versioned material changes require offline evaluation reviewer sign off and prompt injection testing emergency prompt patches expire after seven days unless approved vendors are monitored for latency availability data retention changes subprocessors breach notices and model deprecation critical vendor changes require architecture review before migration after seven days unless converted into a standard change"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q030",
+      "query_type": "ambiguous",
+      "retrieved_chunk_ids": [
+        "gov-003::c001",
+        "gov-003::c000",
+        "ops-002::c000",
+        "fin-002::c001",
+        "it-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "gov-003",
+        "gov-003",
+        "ops-002",
+        "fin-002",
+        "it-001"
+      ],
+      "expected_doc_ids": [
+        "gov-003",
+        "fin-002"
+      ],
+      "expected_chunk_ids": [
+        "gov-003::c000",
+        "fin-002::c000"
+      ],
+      "answer": "faithfulness or context recall continues to regress a hallucination exception must document user impact root cause compensating controls expiration date and owner exceptions cannot be renewed if faithfulness or context recall if retrieved context is stale operators compare the answer timestamp with corpus snapshot time quarantine outdated chunks rebuild the affected index partition and publish"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q031",
+      "query_type": "cloud_operations",
+      "retrieved_chunk_ids": [
+        "cloud-001::c000",
+        "cloud-001::c001",
+        "legal-001::c000",
+        "hr-003::c000",
+        "sec-003::c001"
+      ],
+      "retrieved_doc_ids": [
+        "cloud-001",
+        "cloud-001",
+        "legal-001",
+        "hr-003",
+        "sec-003"
+      ],
+      "expected_doc_ids": [
+        "cloud-001"
+      ],
+      "expected_chunk_ids": [
+        "cloud-001::c000"
+      ],
+      "answer": "object storage buckets use customer managed encryption keys for confidential and restricted data public buckets require explicit approval logging malware scanning and quarterly access scanning and quarterly access review executed customer contracts are retained for seven years after termination draft contracts are retained for two years litigation hold overrides the standard retention schedule"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q032",
+      "query_type": "cloud_operations",
+      "retrieved_chunk_ids": [
+        "cloud-002::c000",
+        "cloud-002::c001",
+        "vend-002::c000",
+        "sec-001::c000",
+        "hr-002::c000"
+      ],
+      "retrieved_doc_ids": [
+        "cloud-002",
+        "cloud-002",
+        "vend-002",
+        "sec-001",
+        "hr-002"
+      ],
+      "expected_doc_ids": [
+        "cloud-002"
+      ],
+      "expected_chunk_ids": [
+        "cloud-002::c000"
+      ],
+      "answer": "regional failover starts with incident commander approval dependency health checks dns traffic shift database replica validation and post failover cost review rollback requires stable review rollback requires stable primary health for thirty minutes approved vendors are monitored for latency availability data retention changes subprocessors breach notices and model deprecation critical vendor changes require architecture review before migration"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q033",
+      "query_type": "cost_latency",
+      "retrieved_chunk_ids": [
+        "cloud-003::c001",
+        "cloud-003::c000",
+        "hr-003::c000",
+        "sec-003::c001",
+        "legal-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "cloud-003",
+        "cloud-003",
+        "hr-003",
+        "sec-003",
+        "legal-001"
+      ],
+      "expected_doc_ids": [
+        "cloud-003"
+      ],
+      "expected_chunk_ids": [
+        "cloud-003::c000"
+      ],
+      "answer": "are refreshed monthly and before major product launches capacity planning uses peak query volume embedding backlog vector index size reranker concurrency generation token budget and latency objective forecasts are refreshed monthly and managers can view job related employee records for direct reports compensation history and medical accommodation files are restricted to hr specialists and are not"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q034",
+      "query_type": "compliance",
+      "retrieved_chunk_ids": [
+        "risk-001::c000",
+        "ops-001::c001",
+        "legal-002::c000",
+        "gov-002::c000",
+        "it-002::c001"
+      ],
+      "retrieved_doc_ids": [
+        "risk-001",
+        "ops-001",
+        "legal-002",
+        "gov-002",
+        "it-002"
+      ],
+      "expected_doc_ids": [
+        "risk-001"
+      ],
+      "expected_chunk_ids": [
+        "risk-001::c000"
+      ],
+      "answer": "accepted risks record scope business owner residual risk rating mitigation plan review date and expiration expired risks automatically return to open remediation status engineer freezes index updates when hallucinated answers are tied to stale chunks when litigation hold is active deletion jobs pause for affected mailboxes contracts chat exports and rag audit logs legal must approve release before retention"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q035",
+      "query_type": "policy_reasoning",
+      "retrieved_chunk_ids": [
+        "risk-002::c000",
+        "priv-002::c000",
+        "priv-002::c001",
+        "eval-001::c001",
+        "fin-002::c000"
+      ],
+      "retrieved_doc_ids": [
+        "risk-002",
+        "priv-002",
+        "priv-002",
+        "eval-001",
+        "fin-002"
+      ],
+      "expected_doc_ids": [
+        "risk-002"
+      ],
+      "expected_chunk_ids": [
+        "risk-002::c000"
+      ],
+      "answer": "when policies conflict restricted data handling takes precedence over cost optimization and convenience legal hold overrides retention deletion incident containment overrides routine indexing freshness data is labeled public internal confidential or restricted restricted data requires encryption policy filtered retrieval redacted embeddings and quarterly access review public data may review public data may be indexed without approval after malware scanning"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q036",
+      "query_type": "policy_reasoning",
+      "retrieved_chunk_ids": [
+        "rag-001::c000",
+        "rag-001::c001",
+        "sec-001::c000",
+        "eval-003::c000",
+        "sec-002::c001"
+      ],
+      "retrieved_doc_ids": [
+        "rag-001",
+        "rag-001",
+        "sec-001",
+        "eval-003",
+        "sec-002"
+      ],
+      "expected_doc_ids": [
+        "rag-001"
+      ],
+      "expected_chunk_ids": [
+        "rag-001::c000"
+      ],
+      "answer": "retrieval filters apply tenant role data classification region and document status before similarity search filters are evaluated before reranking so unauthorized chunks never reach unauthorized chunks never reach the model context enterprise systems enforce role based access control before retrieval finance roles can view invoices hr roles can view benefits legal roles can view contracts"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q037",
+      "query_type": "fact_lookup",
+      "retrieved_chunk_ids": [
+        "rag-002::c000",
+        "ops-002::c000",
+        "ops-001::c001",
+        "it-002::c000",
+        "fin-003::c001"
+      ],
+      "retrieved_doc_ids": [
+        "rag-002",
+        "ops-002",
+        "ops-001",
+        "it-002",
+        "fin-003"
+      ],
+      "expected_doc_ids": [
+        "rag-002"
+      ],
+      "expected_chunk_ids": [
+        "rag-002::c001"
+      ],
+      "answer": "enterprise documents are chunked by section boundaries when available long tables use row groups chunks store source document id section title effective date classification if retrieved context is stale operators compare the answer timestamp with corpus snapshot time quarantine outdated chunks rebuild the affected index partition and publish engineer freezes index updates when hallucinated answers are tied to stale chunks"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q038",
+      "query_type": "compliance",
+      "retrieved_chunk_ids": [
+        "rag-003::c000",
+        "ops-001::c001",
+        "rag-002::c000",
+        "rag-003::c001",
+        "cloud-003::c001"
+      ],
+      "retrieved_doc_ids": [
+        "rag-003",
+        "ops-001",
+        "rag-002",
+        "rag-003",
+        "cloud-003"
+      ],
+      "expected_doc_ids": [
+        "rag-003"
+      ],
+      "expected_chunk_ids": [
+        "rag-003::c000"
+      ],
+      "answer": "generated answers include citations to retrieved chunks for policy finance legal and hr topics answers without supporting citations are marked unverified and excluded from engineer freezes index updates when hallucinated answers are tied to stale chunks enterprise documents are chunked by section boundaries when available long tables use row groups chunks store source document id section title effective date classification"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q039",
+      "query_type": "multi_hop",
+      "retrieved_chunk_ids": [
+        "hr-003::c000",
+        "hr-003::c001",
+        "priv-003::c000",
+        "priv-002::c000",
+        "priv-003::c001"
+      ],
+      "retrieved_doc_ids": [
+        "hr-003",
+        "hr-003",
+        "priv-003",
+        "priv-002",
+        "priv-003"
+      ],
+      "expected_doc_ids": [
+        "priv-003",
+        "rag-001",
+        "priv-002"
+      ],
+      "expected_chunk_ids": [
+        "priv-003::c000",
+        "rag-001::c000",
+        "priv-002::c000"
+      ],
+      "answer": "managers can view job related employee records for direct reports compensation history and medical accommodation files are restricted to hr specialists and are not specialists and are not exposed to general rag retrieval european employee records remain in the eu region customer billing data remains in the contracted cloud region cross region replication requires privacy approval legal"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q040",
+      "query_type": "multi_hop",
+      "retrieved_chunk_ids": [
+        "legal-002::c000",
+        "legal-001::c001",
+        "risk-002::c000",
+        "sec-003::c001",
+        "legal-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "legal-002",
+        "legal-001",
+        "risk-002",
+        "sec-003",
+        "legal-001"
+      ],
+      "expected_doc_ids": [
+        "legal-002",
+        "sec-003",
+        "legal-001"
+      ],
+      "expected_chunk_ids": [
+        "legal-002::c000",
+        "sec-003::c000",
+        "legal-001::c001"
+      ],
+      "answer": "when litigation hold is active deletion jobs pause for affected mailboxes contracts chat exports and rag audit logs legal must approve release before retention the standard retention schedule and prevents deletion until legal releases the hold when policies conflict restricted data handling takes precedence over cost optimization and convenience legal hold overrides retention deletion incident containment overrides routine indexing freshness"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q041",
+      "query_type": "stale_context",
+      "retrieved_chunk_ids": [
+        "ops-002::c000",
+        "ops-001::c001",
+        "ops-002::c001",
+        "rag-003::c000",
+        "risk-002::c000"
+      ],
+      "retrieved_doc_ids": [
+        "ops-002",
+        "ops-001",
+        "ops-002",
+        "rag-003",
+        "risk-002"
+      ],
+      "expected_doc_ids": [
+        "ops-002",
+        "it-001"
+      ],
+      "expected_chunk_ids": [
+        "ops-002::c000",
+        "it-001::c000"
+      ],
+      "answer": "if retrieved context is stale operators compare the answer timestamp with corpus snapshot time quarantine outdated chunks rebuild the affected index partition and publish engineer freezes index updates when hallucinated answers are tied to stale chunks index partition and publish a correction notice for impacted users"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q042",
+      "query_type": "ambiguous",
+      "retrieved_chunk_ids": [
+        "sec-002::c000",
+        "sec-003::c000",
+        "priv-002::c001",
+        "fin-001::c001",
+        "it-003::c000"
+      ],
+      "retrieved_doc_ids": [
+        "sec-002",
+        "sec-003",
+        "priv-002",
+        "fin-001",
+        "it-003"
+      ],
+      "expected_doc_ids": [
+        "priv-002",
+        "cloud-001"
+      ],
+      "expected_chunk_ids": [
+        "priv-002::c000",
+        "cloud-001::c000"
+      ],
+      "answer": "privileged administrator access is reviewed every thirty days dormant accounts older than forty five days are disabled emergency elevation expires after four hours and every rag answer stores query id retrieved document ids chunk ids model version prompt template version policy filters latency estimated cost and user role review public data may be indexed without approval after malware scanning"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q043",
+      "query_type": "ambiguous",
+      "retrieved_chunk_ids": [
+        "fin-001::c001",
+        "vend-003::c000",
+        "fin-001::c000",
+        "vend-003::c001",
+        "gov-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "fin-001",
+        "vend-003",
+        "fin-001",
+        "vend-003",
+        "gov-001"
+      ],
+      "expected_doc_ids": [
+        "fin-001",
+        "vend-003",
+        "gov-001"
+      ],
+      "expected_chunk_ids": [
+        "fin-001::c000",
+        "vend-003::c000",
+        "gov-001::c001"
+      ],
+      "answer": "owner approval emergency vendor payments must be reconciled by finance within three business days purchases above 100000 dollars require procurement review security approval legal approval and finance controller sign off pilot tools below 10000 dollars still require data invoices above 50000 dollars require two approvals from the department owner and finance controller invoices below 50000 dollars require department owner approval emergency vendor"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q044",
+      "query_type": "cost_latency",
+      "retrieved_chunk_ids": [
+        "it-002::c000",
+        "fin-003::c000",
+        "it-002::c001",
+        "cloud-003::c000",
+        "fin-003::c001"
+      ],
+      "retrieved_doc_ids": [
+        "it-002",
+        "fin-003",
+        "it-002",
+        "cloud-003",
+        "fin-003"
+      ],
+      "expected_doc_ids": [
+        "it-002"
+      ],
+      "expected_chunk_ids": [
+        "it-002::c000"
+      ],
+      "answer": "embedding cost is calculated per input token and generation cost per output token reranking adds a per document scoring charge reports group rag cost monthly rag spend is charged to business units by query volume generation tokens embedding tokens reranking calls storage and vector index rebuilds shared platform reports group rag cost by business unit retrieval strategy top k and generation model"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q045",
+      "query_type": "multi_hop",
+      "retrieved_chunk_ids": [
+        "gov-001::c000",
+        "gov-001::c001",
+        "vend-002::c000",
+        "priv-003::c001",
+        "vend-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "gov-001",
+        "gov-001",
+        "vend-002",
+        "priv-003",
+        "vend-001"
+      ],
+      "expected_doc_ids": [
+        "gov-001",
+        "priv-002"
+      ],
+      "expected_chunk_ids": [
+        "gov-001::c000",
+        "priv-002::c000"
+      ],
+      "answer": "model releases need documented owner intended use evaluation evidence rollback plan privacy assessment and risk tier high risk models require governance board approval before governance board approval before production deployment approved vendors are monitored for latency availability data retention changes subprocessors breach notices and model deprecation critical vendor changes require architecture review before migration"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q046",
+      "query_type": "vendor_risk",
+      "retrieved_chunk_ids": [
+        "vend-002::c000",
+        "vend-001::c000",
+        "legal-001::c000",
+        "hr-003::c000",
+        "sec-003::c001"
+      ],
+      "retrieved_doc_ids": [
+        "vend-002",
+        "vend-001",
+        "legal-001",
+        "hr-003",
+        "sec-003"
+      ],
+      "expected_doc_ids": [
+        "vend-002"
+      ],
+      "expected_chunk_ids": [
+        "vend-002::c000"
+      ],
+      "answer": "approved vendors are monitored for latency availability data retention changes subprocessors breach notices and model deprecation critical vendor changes require architecture review before migration new ai vendors complete security questionnaire data processing addendum subprocessor disclosure penetration test evidence and financial risk assessment before production data access is approved executed customer contracts are retained for seven years after termination draft contracts are retained for two years litigatio"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q047",
+      "query_type": "cloud_operations",
+      "retrieved_chunk_ids": [
+        "cloud-002::c000",
+        "cloud-002::c001",
+        "rag-002::c000",
+        "legal-002::c000",
+        "priv-002::c000"
+      ],
+      "retrieved_doc_ids": [
+        "cloud-002",
+        "cloud-002",
+        "rag-002",
+        "legal-002",
+        "priv-002"
+      ],
+      "expected_doc_ids": [
+        "cloud-002"
+      ],
+      "expected_chunk_ids": [
+        "cloud-002::c001"
+      ],
+      "answer": "regional failover starts with incident commander approval dependency health checks dns traffic shift database replica validation and post failover cost review rollback requires stable review rollback requires stable primary health for thirty minutes enterprise documents are chunked by section boundaries when available long tables use row groups chunks store source document id section title effective date classification"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q048",
+      "query_type": "fact_lookup",
+      "retrieved_chunk_ids": [
+        "it-003::c000",
+        "priv-001::c000",
+        "legal-001::c000",
+        "cloud-003::c001",
+        "rag-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "it-003",
+        "priv-001",
+        "legal-001",
+        "cloud-003",
+        "rag-001"
+      ],
+      "expected_doc_ids": [
+        "it-003"
+      ],
+      "expected_chunk_ids": [
+        "it-003::c000"
+      ],
+      "answer": "cloud operations rotate service credentials every ninety days verify backup completion daily and fail over regional services only after health checks confirm sustained outage personally identifiable information is redacted before embeddings are written to a vector store the service masks social security numbers bank accounts home addresses patient executed customer contracts are retained for seven years after termination draft contracts are retained for two years litigation hold overrides the standard retention sch"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q049",
+      "query_type": "policy_reasoning",
+      "retrieved_chunk_ids": [
+        "legal-002::c000",
+        "legal-001::c001",
+        "legal-002::c001",
+        "risk-002::c000",
+        "priv-003::c001"
+      ],
+      "retrieved_doc_ids": [
+        "legal-002",
+        "legal-001",
+        "legal-002",
+        "risk-002",
+        "priv-003"
+      ],
+      "expected_doc_ids": [
+        "legal-001",
+        "risk-002"
+      ],
+      "expected_chunk_ids": [
+        "legal-001::c001",
+        "risk-002::c000"
+      ],
+      "answer": "when litigation hold is active deletion jobs pause for affected mailboxes contracts chat exports and rag audit logs legal must approve release before retention the standard retention schedule and prevents deletion until legal releases the hold approve release before retention cleanup resumes"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q050",
+      "query_type": "compliance",
+      "retrieved_chunk_ids": [
+        "rag-003::c000",
+        "ops-001::c001",
+        "eval-002::c000",
+        "ops-002::c000",
+        "cloud-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "rag-003",
+        "ops-001",
+        "eval-002",
+        "ops-002",
+        "cloud-001"
+      ],
+      "expected_doc_ids": [
+        "rag-003"
+      ],
+      "expected_chunk_ids": [
+        "rag-003::c000"
+      ],
+      "answer": "generated answers include citations to retrieved chunks for policy finance legal and hr topics answers without supporting citations are marked unverified and excluded from engineer freezes index updates when hallucinated answers are tied to stale chunks high risk answers receive human review sampling compliance medical payroll and legal answer categories require weekly review until two consecutive weeks meet faithfulness and"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q051",
+      "query_type": "stale_context",
+      "retrieved_chunk_ids": [
+        "ops-002::c001",
+        "ops-002::c000",
+        "ops-001::c001",
+        "sec-002::c000",
+        "rag-003::c000"
+      ],
+      "retrieved_doc_ids": [
+        "ops-002",
+        "ops-002",
+        "ops-001",
+        "sec-002",
+        "rag-003"
+      ],
+      "expected_doc_ids": [
+        "ops-002"
+      ],
+      "expected_chunk_ids": [
+        "ops-002::c001"
+      ],
+      "answer": "index partition and publish a correction notice for impacted users if retrieved context is stale operators compare the answer timestamp with corpus snapshot time quarantine outdated chunks rebuild the affected index partition and publish engineer freezes index updates when hallucinated answers are tied to stale chunks"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q052",
+      "query_type": "fact_lookup",
+      "retrieved_chunk_ids": [
+        "gov-002::c000",
+        "gov-002::c001",
+        "rag-001::c000",
+        "hr-001::c000",
+        "rag-002::c000"
+      ],
+      "retrieved_doc_ids": [
+        "gov-002",
+        "gov-002",
+        "rag-001",
+        "hr-001",
+        "rag-002"
+      ],
+      "expected_doc_ids": [
+        "gov-002"
+      ],
+      "expected_chunk_ids": [
+        "gov-002::c001"
+      ],
+      "answer": "prompt templates are versioned material changes require offline evaluation reviewer sign off and prompt injection testing emergency prompt patches expire after seven days unless after seven days unless converted into a standard change retrieval filters apply tenant role data classification region and document status before similarity search filters are evaluated before reranking so unauthorized chunks never reach"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q053",
+      "query_type": "cost_latency",
+      "retrieved_chunk_ids": [
+        "cloud-003::c000",
+        "cloud-003::c001",
+        "priv-003::c000",
+        "it-001::c000",
+        "gov-001::c000"
+      ],
+      "retrieved_doc_ids": [
+        "cloud-003",
+        "cloud-003",
+        "priv-003",
+        "it-001",
+        "gov-001"
+      ],
+      "expected_doc_ids": [
+        "cloud-003"
+      ],
+      "expected_chunk_ids": [
+        "cloud-003::c000"
+      ],
+      "answer": "capacity planning uses peak query volume embedding backlog vector index size reranker concurrency generation token budget and latency objective forecasts are refreshed monthly and are refreshed monthly and before major product launches european employee records remain in the eu region customer billing data remains in the contracted cloud region cross region replication requires privacy approval legal"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q054",
+      "query_type": "compliance",
+      "retrieved_chunk_ids": [
+        "sec-003::c001",
+        "hr-003::c001",
+        "hr-003::c000",
+        "legal-001::c000",
+        "rag-002::c000"
+      ],
+      "retrieved_doc_ids": [
+        "sec-003",
+        "hr-003",
+        "hr-003",
+        "legal-001",
+        "rag-002"
+      ],
+      "expected_doc_ids": [
+        "sec-003"
+      ],
+      "expected_chunk_ids": [
+        "sec-003::c001"
+      ],
+      "answer": "cost and user role audit records are immutable and retained for eighteen months specialists and are not exposed to general rag retrieval managers can view job related employee records for direct reports compensation history and medical accommodation files are restricted to hr specialists and are not"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q055",
+      "query_type": "policy_reasoning",
+      "retrieved_chunk_ids": [
+        "gov-003::c000",
+        "gov-003::c001",
+        "fin-002::c001",
+        "eval-003::c001",
+        "eval-001::c001"
+      ],
+      "retrieved_doc_ids": [
+        "gov-003",
+        "gov-003",
+        "fin-002",
+        "eval-003",
+        "eval-001"
+      ],
+      "expected_doc_ids": [
+        "gov-003",
+        "eval-002"
+      ],
+      "expected_chunk_ids": [
+        "gov-003::c000",
+        "eval-002::c000"
+      ],
+      "answer": "a hallucination exception must document user impact root cause compensating controls expiration date and owner exceptions cannot be renewed if faithfulness or context recall faithfulness or context recall continues to regress exceptions trigger finance review and manager notification"
+    },
+    {
+      "variant": "hybrid_dense_hash_k5_rerank",
+      "query_id": "q056",
+      "query_type": "multi_hop",
+      "retrieved_chunk_ids": [
+        "eval-003::c000",
+        "fin-003::c000",
+        "priv-001::c000",
+        "priv-003::c001",
+        "ops-002::c001"
+      ],
+      "retrieved_doc_ids": [
+        "eval-003",
+        "fin-003",
+        "priv-001",
+        "priv-003",
+        "ops-002"
+      ],
+      "expected_doc_ids": [
+        "eval-003",
+        "eval-001",
+        "sec-003"
+      ],
+      "expected_chunk_ids": [
+        "eval-003::c000",
+        "eval-001::c000",
+        "sec-003::c000"
+      ],
+      "answer": "benchmark runs must record fixed seeds dataset hash configuration file retriever variant model profile code commit execution time and artifact checksums for tables traces monthly rag spend is charged to business units by query volume generation tokens embedding tokens reranking calls storage and vector index rebuilds shared platform personally identifiable information is redacted before embeddings are written to a vector store the service masks social security numbers bank accounts home addresses patient"
+    }
+  ]
+}

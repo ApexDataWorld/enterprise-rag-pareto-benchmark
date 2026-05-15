@@ -1,0 +1,6 @@
+variant,metric,mean,ci_lower,ci_upper
+hybrid_dense_hash_k5_rerank,faithfulness,0.9984553354078287,0.9971443943647448,0.9996630727762803
+hybrid_dense_hash_k5_rerank,hallucination_risk,0.03912903198491138,0.022076327386300453,0.0582904620181406
+hybrid_dense_hash_k5_rerank,context_precision,0.2142857142857143,0.18571428571428572,0.24285714285714288
+hybrid_dense_hash_k5_rerank,latency_ms,603.1,603.1,603.1
+hybrid_dense_hash_k5_rerank,cost_usd,7.993571428571429e-05,7.951142857142857e-05,8.033857142857143e-05

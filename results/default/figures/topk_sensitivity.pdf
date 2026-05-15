@@ -15,7 +15,7 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
 endobj
 6 0 obj
-<< /Length 1276 >>
+<< /Length 1281 >>
 stream
 0.07 0.09 0.12 rg
 BT /F2 20 Tf 86 502 Td (Top-k Sensitivity) Tj ET
@@ -56,7 +56,7 @@ BT /F1 11 Tf 746 444 Td (hybrid_k5_rerank Pareto) Tj ET
 0.059 0.463 0.431 rg
 722.5 418.50 11 11 re f
 0.07 0.09 0.12 rg
-BT /F1 11 Tf 746 420 Td (hybrid_dense_k5_rerank Pareto) Tj ET
+BT /F1 11 Tf 746 420 Td (hybrid_dense_hash_k5_rerank Pareto) Tj ET
 0.059 0.463 0.431 rg
 722.5 394.50 11 11 re f
 0.07 0.09 0.12 rg
@@ -78,5 +78,5 @@ xref
 0000000396 00000 n 
 trailer << /Size 7 /Root 1 0 R >>
 startxref
-1724
+1729
 %%EOF

@@ -1,0 +1,96 @@
+{
+  "created_at_utc": "2026-05-15T14:10:20.755824+00:00",
+  "python": "3.13.3 (main, Apr  8 2025, 13:54:08) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "platform": "macOS-15.7.4-arm64-arm-64bit-Mach-O",
+  "git_commit": "ee2e06454b535979624b4bad3e630471600c0583",
+  "config": {
+    "seed": 42,
+    "corpus_path": "data/corpus/enterprise_docs.jsonl",
+    "questions_path": "data/questions/enterprise_qa.jsonl",
+    "output_dir": "results/neural_embedding_validation",
+    "chunk": {
+      "size_tokens": 24,
+      "overlap_tokens": 4
+    },
+    "embedding_provider": {
+      "type": "sentence_transformers",
+      "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+      "normalize": true,
+      "cache_dir": ".cache/embeddings"
+    },
+    "cost_model": {
+      "retrieval_cost_per_chunk": 1.5e-08,
+      "rerank_cost_per_document": 4e-06,
+      "dense_embedding_cost_per_query": 1.2e-06,
+      "dense_embedding_latency_ms": 12.0,
+      "hybrid_dense_hash_fusion_latency_ms": 4.0,
+      "retrieval_base_latency_ms": 35.0,
+      "retrieval_latency_per_chunk_ms": 1.8,
+      "retrieval_latency_per_topk_ms": 4.5,
+      "rerank_latency_per_document_ms": 18.0
+    },
+    "variants": [
+      {
+        "name": "hybrid_k5_rerank_hash",
+        "retriever": "hybrid_dense_hash",
+        "top_k": 5,
+        "rerank": true,
+        "generator": "extractive_medium"
+      },
+      {
+        "name": "dense_neural_k5",
+        "retriever": "dense_neural",
+        "top_k": 5,
+        "rerank": false,
+        "generator": "extractive_small"
+      },
+      {
+        "name": "dense_neural_k5_rerank",
+        "retriever": "dense_neural",
+        "top_k": 5,
+        "rerank": true,
+        "generator": "extractive_small"
+      },
+      {
+        "name": "hybrid_neural_k5_rerank",
+        "retriever": "hybrid_neural",
+        "top_k": 5,
+        "rerank": true,
+        "generator": "extractive_medium"
+      },
+      {
+        "name": "hybrid_neural_k8_rerank",
+        "retriever": "hybrid_neural",
+        "top_k": 8,
+        "rerank": true,
+        "generator": "extractive_medium"
+      }
+    ]
+  },
+  "artifacts": {
+    "results/neural_embedding_validation/tables/query_metrics.csv": "b23c1b15bab16a394162ae00ac3b47da86efa92f4b128dd43e153f74f9c30c15",
+    "results/neural_embedding_validation/tables/summary_metrics.csv": "c8d1b11d21520f090f0d2c3de374366a84b322e4a18ebd603b3f02333715a236",
+    "results/neural_embedding_validation/tables/statistical_comparisons.csv": "84ec3b9bd417dd115b3763a2defbdc818ab880a1aacd51b96f7783200c223d75",
+    "results/neural_embedding_validation/tables/confidence_intervals.csv": "33af0b261f156fccad2e1ddef897962f37d86e55fa272969568db531bc17e6ae",
+    "results/neural_embedding_validation/tables/query_type_summary.csv": "af44760d563c4892ea161c4f6bc9528be910cf641ff4c79f97d8523c3d132930",
+    "results/neural_embedding_validation/tables/pareto_frontier_data.csv": "513dc43f0ff99a0a4fdc1170b1ad13b365af25a5ec2512d4933f04d93e0ca85e",
+    "results/neural_embedding_validation/tables/final_latex_table_values.tex": "af74f4da0f81798256ef92cf860a521af27b10c7728e457480a46367dd28634c",
+    "results/neural_embedding_validation/final_result_summary.md": "42bcaf6cd6ddab05708d90079de379bbcdaaf46785b4b9930c576b71b906f8ff",
+    "results/neural_embedding_validation/v3_consistency_notes.md": "d855f97b561d9a0851f66275c67acaed710acc0d0fd989e63503bdb2d382a6c2",
+    "results/neural_embedding_validation/traces/retrieval_traces.json": "98f6531f4b495e10b7c5f7a244e03324aa1a2b16fab5e020b13e72c5e737ea77",
+    "results/neural_embedding_validation/figures/topk_sensitivity.svg": "3587749cb8fe9c0768c36cd14c6550d065409f5c883817a0507639d19f584e7d",
+    "results/neural_embedding_validation/figures/risk_vs_faithfulness.svg": "216d0d441e032caa749f9eeab37c6e195c9e4188cbd213a248417f9af77b5c01",
+    "results/neural_embedding_validation/figures/reranker_impact.pdf": "8d53cd86b2150ba44566c2fc8e2612f904b24bb0f9a80e35fe208c0f1ca7a61e",
+    "results/neural_embedding_validation/figures/topk_sensitivity.pdf": "a6fb46e630f0129649976285676905254f14d5c6c8b7e496d80753936f64b95a",
+    "results/neural_embedding_validation/figures/risk_vs_faithfulness.pdf": "5cb7649001204f469764a88900cd321101df7a983d55eb6376d9779f825c7cdc",
+    "results/neural_embedding_validation/figures/reranker_impact.svg": "3b0d5fe793620e601ce0162455305e6118922bd0a6e80be4dc3286d0c11ecb78",
+    "results/neural_embedding_validation/figures/pareto_frontier.pdf": "5d5b55f7829903eb42febfdf9cb6a97c2679fa08f9c5fdbd9895829fd3dd0ebc",
+    "results/neural_embedding_validation/figures/query_type_performance.pdf": "8d53cd86b2150ba44566c2fc8e2612f904b24bb0f9a80e35fe208c0f1ca7a61e",
+    "results/neural_embedding_validation/figures/cost_vs_quality.svg": "f791ddd7b787df7f98a47ab6246c1ca7bac565fb8f952a52935ab586138b5df9",
+    "results/neural_embedding_validation/figures/latency_vs_quality.pdf": "2609965aee5c8d5b672d55892db8d2cde89ce0ae567fb70c4f30f9ce72f17722",
+    "results/neural_embedding_validation/figures/pareto_frontier.svg": "7d05f6c2f6fa6cb4984aaebec016e2d0bb5a03702b48deee9fa5788ab5fb5f1f",
+    "results/neural_embedding_validation/figures/query_type_performance.svg": "fbaa4617ddd75d0c94ebceea1be96a70f937a42c041dad9d15b2afa68db47278",
+    "results/neural_embedding_validation/figures/latency_vs_quality.svg": "0abe61ba4ab53ad92b73ed083b0136cc005cbe90023a7d42397634eea63245c7",
+    "results/neural_embedding_validation/figures/cost_vs_quality.pdf": "6862571f7430e9c19219d98d50df082faeccf7c63e7867a4fd41408a85b05a67"
+  }
+}

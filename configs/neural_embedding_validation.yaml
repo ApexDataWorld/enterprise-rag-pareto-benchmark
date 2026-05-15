@@ -1,0 +1,49 @@
+seed: 42
+corpus_path: data/corpus/enterprise_docs.jsonl
+questions_path: data/questions/enterprise_qa.jsonl
+output_dir: results/neural_embedding_validation
+chunk:
+  size_tokens: 24
+  overlap_tokens: 4
+embedding_provider:
+  type: sentence_transformers
+  model_name: sentence-transformers/all-MiniLM-L6-v2
+  normalize: true
+  cache_dir: .cache/embeddings
+cost_model:
+  retrieval_cost_per_chunk: 0.000000015
+  rerank_cost_per_document: 0.000004
+  dense_embedding_cost_per_query: 0.0000012
+  dense_embedding_latency_ms: 12.0
+  hybrid_dense_hash_fusion_latency_ms: 4.0
+  retrieval_base_latency_ms: 35.0
+  retrieval_latency_per_chunk_ms: 1.8
+  retrieval_latency_per_topk_ms: 4.5
+  rerank_latency_per_document_ms: 18.0
+variants:
+  - name: hybrid_k5_rerank_hash
+    retriever: hybrid_dense_hash
+    top_k: 5
+    rerank: true
+    generator: extractive_medium
+  - name: dense_neural_k5
+    retriever: dense_neural
+    top_k: 5
+    rerank: false
+    generator: extractive_small
+  - name: dense_neural_k5_rerank
+    retriever: dense_neural
+    top_k: 5
+    rerank: true
+    generator: extractive_small
+  - name: hybrid_neural_k5_rerank
+    retriever: hybrid_neural
+    top_k: 5
+    rerank: true
+    generator: extractive_medium
+  - name: hybrid_neural_k8_rerank
+    retriever: hybrid_neural
+    top_k: 8
+    rerank: true
+    generator: extractive_medium
+

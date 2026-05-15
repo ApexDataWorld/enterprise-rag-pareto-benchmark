@@ -1,0 +1,74 @@
+{
+  "created_at_utc": "2026-05-15T14:10:24.037137+00:00",
+  "python": "3.13.3 (main, Apr  8 2025, 13:54:08) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "platform": "macOS-15.7.4-arm64-arm-64bit-Mach-O",
+  "git_commit": "ee2e06454b535979624b4bad3e630471600c0583",
+  "config": {
+    "seed": 42,
+    "corpus_path": "data/corpus/enterprise_docs.jsonl",
+    "questions_path": "data/questions/enterprise_qa.jsonl",
+    "output_dir": "results/default",
+    "chunk": {
+      "size_tokens": 24,
+      "overlap_tokens": 4
+    },
+    "cost_model": {
+      "retrieval_cost_per_chunk": 1.5e-08,
+      "rerank_cost_per_document": 4e-06,
+      "dense_embedding_cost_per_query": 1.2e-06,
+      "dense_embedding_latency_ms": 12.0,
+      "hybrid_dense_hash_fusion_latency_ms": 4.0,
+      "retrieval_base_latency_ms": 35.0,
+      "retrieval_latency_per_chunk_ms": 1.8,
+      "retrieval_latency_per_topk_ms": 4.5,
+      "rerank_latency_per_document_ms": 18.0
+    },
+    "dense_retrieval": {
+      "provider": "deterministic_hashing_embedding_v1",
+      "model_name": "local_hashing_embedding_v1",
+      "embedding_dimension": 96,
+      "similarity": "cosine",
+      "index": "local_in_memory_exhaustive_scan",
+      "score_fusion": "hybrid_dense_hash = 0.56 * lexical_cosine + 0.44 * dense_cosine + 0.12 * phrase_overlap"
+    },
+    "variants": [
+      {
+        "name": "hybrid_dense_hash_k5_rerank",
+        "retriever": "hybrid_dense_hash",
+        "top_k": 5,
+        "rerank": true,
+        "generator": "extractive_medium"
+      }
+    ],
+    "hybrid_weights": {
+      "lexical": 0.2,
+      "dense": 0.7,
+      "phrase": 0.1
+    }
+  },
+  "artifacts": {
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/tables/query_metrics.csv": "160cd0aa3b571290c40227b14a287c03a4a89a42736a6185c82cfb6fc9c1b5f0",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/tables/summary_metrics.csv": "043bb49c9f30deaad76134842e41d0f2b517b13d31597fec66eee14747fbcdd7",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/tables/confidence_intervals.csv": "8e20f2f09ea42f4cc8eb989967ba809ac134b5e07c0a3ef729315d41a8269f7e",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/tables/query_type_summary.csv": "59c0d7e9a42ba52f3188f351e614ffe998d6bf126159b93bd880a6fb5bd9ddc8",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/tables/pareto_frontier_data.csv": "4ef1cbf7b007e7f1d14a6a19ae2b250cc7f8e20ce6f84bd60f5ca7dc212fa5cf",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/tables/final_latex_table_values.tex": "93819d3e33e9e70334cd90c906c2f0b1777d5149166a1d10d2b52990c814849c",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/final_result_summary.md": "27b99671eae4e619ed1345e2244aabeb65f5133251804af5d47f30f8bfac30e9",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/v3_consistency_notes.md": "0e2c8b7c2c61d7cb0a8845253b81e9b6554476df8660064881e5934946b2ba74",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/traces/retrieval_traces.json": "ab67cb4bb60828f7f877135957ae3eceb20900a68c154bcb30a9dbaf4f69906c",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/figures/topk_sensitivity.svg": "93ca8e1f46759bde340f10d51b493ed218c0e905eb9b11861c99519af9fec7c4",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/figures/risk_vs_faithfulness.svg": "f2dddef308340ed3e8b63abb2cd0250b795e9ea671faf0b40a84b0017943afaf",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/figures/reranker_impact.pdf": "8d53cd86b2150ba44566c2fc8e2612f904b24bb0f9a80e35fe208c0f1ca7a61e",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/figures/topk_sensitivity.pdf": "dd2522a9e366e3de34619287f4c42e68cdde8c6033f4357d9d63c7f1b0813d76",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/figures/risk_vs_faithfulness.pdf": "cb6658fefd6774724b0290b8be748d5f9e1683d433d61c2ed8f089fb9d4ee4df",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/figures/reranker_impact.svg": "3b0d5fe793620e601ce0162455305e6118922bd0a6e80be4dc3286d0c11ecb78",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/figures/pareto_frontier.pdf": "92f5245d7c2c3b25354f1f02968c2d0b02ddf4f49cc2fc4ebecfe43e7d0767c4",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/figures/query_type_performance.pdf": "a23be2001cf5036bab68a45bb4bebca769f0a1454632bd7ca5c94c0cb3583edb",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/figures/cost_vs_quality.svg": "be5fbaf4f7dbd71ef16395fd501ab40b8ad0d767d49280dbd94fcd2e418e8a0d",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/figures/latency_vs_quality.pdf": "8749a2505cdbdb1532be346f47d7276c9ecbc4b885088bb5a6f4b926ee871984",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/figures/pareto_frontier.svg": "6583b52083791a628f5642f376b340bbf9ba7184bb1ea988b8e662d3ba2f652c",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/figures/query_type_performance.svg": "13d3d852f40255d09c13e8d3bbd73dd6de61ecf6129ee031905e8de202d29f0a",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/figures/latency_vs_quality.svg": "f4b48ec7ccc15ef2efa053ecacff32f1a764b003b1788dd45f6f9c68ed26218c",
+    "results/sensitivity/hybrid_weight_ablation_runs/dense_dominant/figures/cost_vs_quality.pdf": "66c22edfee04d6e62a5b54faa6daf3783c51f0fd0aef335354983091ceb70b7c"
+  }
+}

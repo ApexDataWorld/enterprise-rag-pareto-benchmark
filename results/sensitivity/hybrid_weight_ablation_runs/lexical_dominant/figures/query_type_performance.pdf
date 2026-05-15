@@ -1,0 +1,106 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 980 540] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 1916 >>
+stream
+0.07 0.09 0.12 rg
+BT /F2 20 Tf 86 502 Td (Query Type Performance) Tj ET
+0.15 0.19 0.25 RG 1.2 w
+86 104 m 686 104 l S
+86 104 m 86 464 l S
+0.90 0.92 0.94 RG 0.6 w
+236.00 104 m 236.00 464 l S
+86 194.00 m 686 194.00 l S
+386.00 104 m 386.00 464 l S
+86 284.00 m 686 284.00 l S
+536.00 104 m 536.00 464 l S
+86 374.00 m 686 374.00 l S
+686.00 104 m 686.00 464 l S
+86 464.00 m 686 464.00 l S
+BT /F1 13 Tf 346 40 Td (query type index) Tj ET
+BT /F1 13 Tf 24 274 Td (faithfulness) Tj ET
+0.145 0.388 0.922 rg
+121.88 433.67 11 11 re f
+0.863 0.149 0.149 rg
+186.53 433.67 11 11 re f
+0.486 0.227 0.929 rg
+251.19 433.67 11 11 re f
+0.792 0.541 0.016 rg
+315.84 433.67 11 11 re f
+0.031 0.569 0.698 rg
+380.50 391.66 11 11 re f
+0.294 0.333 0.388 rg
+445.16 433.67 11 11 re f
+0.145 0.388 0.922 rg
+509.81 399.01 11 11 re f
+0.863 0.149 0.149 rg
+574.47 433.67 11 11 re f
+0.486 0.227 0.929 rg
+639.12 123.33 11 11 re f
+0.07 0.09 0.12 rg
+BT /F2 13 Tf 728 470 Td (Variants) Tj ET
+0.145 0.388 0.922 rg
+722.5 442.50 11 11 re f
+0.07 0.09 0.12 rg
+BT /F1 11 Tf 746 444 Td (ambiguous) Tj ET
+0.863 0.149 0.149 rg
+722.5 418.50 11 11 re f
+0.07 0.09 0.12 rg
+BT /F1 11 Tf 746 420 Td (cloud_operations) Tj ET
+0.486 0.227 0.929 rg
+722.5 394.50 11 11 re f
+0.07 0.09 0.12 rg
+BT /F1 11 Tf 746 396 Td (compliance) Tj ET
+0.792 0.541 0.016 rg
+722.5 370.50 11 11 re f
+0.07 0.09 0.12 rg
+BT /F1 11 Tf 746 372 Td (cost_latency) Tj ET
+0.031 0.569 0.698 rg
+722.5 346.50 11 11 re f
+0.07 0.09 0.12 rg
+BT /F1 11 Tf 746 348 Td (fact_lookup) Tj ET
+0.294 0.333 0.388 rg
+722.5 322.50 11 11 re f
+0.07 0.09 0.12 rg
+BT /F1 11 Tf 746 324 Td (multi_hop) Tj ET
+0.145 0.388 0.922 rg
+722.5 298.50 11 11 re f
+0.07 0.09 0.12 rg
+BT /F1 11 Tf 746 300 Td (policy_reasoning) Tj ET
+0.863 0.149 0.149 rg
+722.5 274.50 11 11 re f
+0.07 0.09 0.12 rg
+BT /F1 11 Tf 746 276 Td (stale_context) Tj ET
+0.486 0.227 0.929 rg
+722.5 250.50 11 11 re f
+0.07 0.09 0.12 rg
+BT /F1 11 Tf 746 252 Td (vendor_risk) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000000396 00000 n 
+trailer << /Size 7 /Root 1 0 R >>
+startxref
+2364
+%%EOF

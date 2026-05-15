@@ -1,0 +1,16 @@
+seed: 42
+base_config: configs/default.yaml
+output_dir: results/chunk_size_sensitivity
+chunk_sizes:
+  - size_tokens: 24
+    overlap_tokens: 4
+  - size_tokens: 256
+    overlap_tokens: 26
+  - size_tokens: 512
+    overlap_tokens: 51
+  - size_tokens: 1024
+    overlap_tokens: 102
+variants:
+  - name: lexical_k5_rerank
+  - name: hybrid_k5_rerank
+  - name: hybrid_dense_hash_k5_rerank

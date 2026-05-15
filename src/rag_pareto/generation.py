@@ -21,7 +21,7 @@ DEFAULT_COST_MODEL = {
     "rerank_cost_per_document": 0.000004,
     "dense_embedding_cost_per_query": 0.0000012,
     "dense_embedding_latency_ms": 12.0,
-    "hybrid_dense_fusion_latency_ms": 4.0,
+    "hybrid_dense_hash_fusion_latency_ms": 4.0,
     "retrieval_base_latency_ms": 35.0,
     "retrieval_latency_per_chunk_ms": 1.8,
     "retrieval_latency_per_topk_ms": 4.5,
@@ -77,12 +77,12 @@ def estimate_cost_latency(
     embedding_latency = 0.0
     fusion_latency = 0.0
     embedding_cost = 0.0
-    if retriever == "dense":
+    if retriever in {"dense", "dense_hash", "dense_neural"}:
         embedding_latency = float(cfg["dense_embedding_latency_ms"])
         embedding_cost = float(cfg["dense_embedding_cost_per_query"])
-    elif retriever == "hybrid_dense":
+    elif retriever in {"hybrid_dense", "hybrid_dense_hash", "hybrid_neural"}:
         embedding_latency = float(cfg["dense_embedding_latency_ms"])
-        fusion_latency = float(cfg["hybrid_dense_fusion_latency_ms"])
+        fusion_latency = float(cfg.get("hybrid_dense_hash_fusion_latency_ms", cfg.get("hybrid_dense_fusion_latency_ms", 4.0)))
         embedding_cost = float(cfg["dense_embedding_cost_per_query"])
 
     retrieval_latency = (

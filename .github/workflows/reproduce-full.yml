@@ -1,0 +1,20 @@
+name: reproduce-full
+
+on:
+  workflow_dispatch:
+
+jobs:
+  reproduce-full:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install -e .
+      - run: make test
+      - run: make reproduce-main
+      - run: make reproduce-chunk-sensitivity
+      - run: make reproduce-sensitivity
+      - run: make paper-artifacts
+

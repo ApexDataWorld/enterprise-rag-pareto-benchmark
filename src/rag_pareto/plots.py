@@ -7,6 +7,10 @@ from pathlib import Path
 
 
 def write_scatter_svg(rows: list[dict[str, str]], x_key: str, y_key: str, label_key: str, path: Path, title: str) -> None:
+    if not rows:
+        path.write_text(_empty_svg(title), encoding="utf-8")
+        _write_basic_pdf(rows, x_key, y_key, label_key, path.with_suffix(".pdf"), title, chart_type="scatter")
+        return
     width, height = 980, 540
     margin_left, margin_top, margin_bottom = 86, 76, 76
     plot_width, plot_height = 600, 360
@@ -41,6 +45,10 @@ def write_scatter_svg(rows: list[dict[str, str]], x_key: str, y_key: str, label_
 
 def write_line_svg(rows: list[dict[str, str]], x_key: str, y_key: str, path: Path, title: str) -> None:
     sorted_rows = sorted(rows, key=lambda row: float(row[x_key]))
+    if not sorted_rows:
+        path.write_text(_empty_svg(title), encoding="utf-8")
+        _write_basic_pdf(sorted_rows, x_key, y_key, "variant", path.with_suffix(".pdf"), title, chart_type="line")
+        return
     width, height = 980, 540
     margin_left, margin_top, margin_bottom = 86, 76, 76
     plot_width, plot_height = 600, 360
@@ -126,6 +134,10 @@ def _svg_header(width: int, height: int) -> str:
   .legend-title {{ font: 700 13px Arial, sans-serif; fill: #111827; }}
   .legend {{ font: 12px Arial, sans-serif; fill: #111827; }}
 </style>"""
+
+
+def _empty_svg(title: str) -> str:
+    return _svg_header(980, 540) + f"\n<text x='86' y='38' class='title'>{escape(title)}</text>\n<text x='86' y='100' class='legend'>No data for this plot.</text>\n</svg>\n"
 
 
 def _write_basic_pdf(

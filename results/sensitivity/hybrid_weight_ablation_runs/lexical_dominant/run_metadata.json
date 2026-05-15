@@ -1,0 +1,74 @@
+{
+  "created_at_utc": "2026-05-15T14:10:23.802925+00:00",
+  "python": "3.13.3 (main, Apr  8 2025, 13:54:08) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "platform": "macOS-15.7.4-arm64-arm-64bit-Mach-O",
+  "git_commit": "ee2e06454b535979624b4bad3e630471600c0583",
+  "config": {
+    "seed": 42,
+    "corpus_path": "data/corpus/enterprise_docs.jsonl",
+    "questions_path": "data/questions/enterprise_qa.jsonl",
+    "output_dir": "results/default",
+    "chunk": {
+      "size_tokens": 24,
+      "overlap_tokens": 4
+    },
+    "cost_model": {
+      "retrieval_cost_per_chunk": 1.5e-08,
+      "rerank_cost_per_document": 4e-06,
+      "dense_embedding_cost_per_query": 1.2e-06,
+      "dense_embedding_latency_ms": 12.0,
+      "hybrid_dense_hash_fusion_latency_ms": 4.0,
+      "retrieval_base_latency_ms": 35.0,
+      "retrieval_latency_per_chunk_ms": 1.8,
+      "retrieval_latency_per_topk_ms": 4.5,
+      "rerank_latency_per_document_ms": 18.0
+    },
+    "dense_retrieval": {
+      "provider": "deterministic_hashing_embedding_v1",
+      "model_name": "local_hashing_embedding_v1",
+      "embedding_dimension": 96,
+      "similarity": "cosine",
+      "index": "local_in_memory_exhaustive_scan",
+      "score_fusion": "hybrid_dense_hash = 0.56 * lexical_cosine + 0.44 * dense_cosine + 0.12 * phrase_overlap"
+    },
+    "variants": [
+      {
+        "name": "hybrid_dense_hash_k5_rerank",
+        "retriever": "hybrid_dense_hash",
+        "top_k": 5,
+        "rerank": true,
+        "generator": "extractive_medium"
+      }
+    ],
+    "hybrid_weights": {
+      "lexical": 0.7,
+      "dense": 0.2,
+      "phrase": 0.1
+    }
+  },
+  "artifacts": {
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/tables/query_metrics.csv": "3f77b32db5f4dd2366c6cb63e74b75bb8dfbbcfeecdf81326becb7503da63515",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/tables/summary_metrics.csv": "ce9f83534bafef06fe81cc4f51181ac5b1471235cc4c623bfd6c42d4c7fcf521",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/tables/confidence_intervals.csv": "95b7a61e429edc95eed6ffe89f4aefd50daeaae9ff67af2669df1eeef81aa3a7",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/tables/query_type_summary.csv": "01935f1273730e0308a96b1d61add1817d90c2cffccdd9314a88d00a75293133",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/tables/pareto_frontier_data.csv": "66a72f6cf0a93de0deb6fcf74a78833073d6f53dca4a0cfee015cd9efa0f0202",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/tables/final_latex_table_values.tex": "7884718b4558c99b141ee96d21d2100c1ef01aeb9a8703cd9333c5b9ae307cfa",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/final_result_summary.md": "10c2df39203c91313886b3b20c730b9f3353cb4eac24e777bccdf2901142baf6",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/v3_consistency_notes.md": "0e2c8b7c2c61d7cb0a8845253b81e9b6554476df8660064881e5934946b2ba74",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/traces/retrieval_traces.json": "51e2439efd473bb8aa42467d3718ba1db3486099c6c8c2e8a41f0323f5f43495",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/figures/topk_sensitivity.svg": "93ca8e1f46759bde340f10d51b493ed218c0e905eb9b11861c99519af9fec7c4",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/figures/risk_vs_faithfulness.svg": "f2dddef308340ed3e8b63abb2cd0250b795e9ea671faf0b40a84b0017943afaf",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/figures/reranker_impact.pdf": "8d53cd86b2150ba44566c2fc8e2612f904b24bb0f9a80e35fe208c0f1ca7a61e",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/figures/topk_sensitivity.pdf": "dd2522a9e366e3de34619287f4c42e68cdde8c6033f4357d9d63c7f1b0813d76",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/figures/risk_vs_faithfulness.pdf": "cb6658fefd6774724b0290b8be748d5f9e1683d433d61c2ed8f089fb9d4ee4df",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/figures/reranker_impact.svg": "3b0d5fe793620e601ce0162455305e6118922bd0a6e80be4dc3286d0c11ecb78",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/figures/pareto_frontier.pdf": "92f5245d7c2c3b25354f1f02968c2d0b02ddf4f49cc2fc4ebecfe43e7d0767c4",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/figures/query_type_performance.pdf": "2cdc9a29af39eea8b3588a1f5fb5fdb8dea1baea7ce701810628661260914be6",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/figures/cost_vs_quality.svg": "be5fbaf4f7dbd71ef16395fd501ab40b8ad0d767d49280dbd94fcd2e418e8a0d",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/figures/latency_vs_quality.pdf": "8749a2505cdbdb1532be346f47d7276c9ecbc4b885088bb5a6f4b926ee871984",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/figures/pareto_frontier.svg": "6583b52083791a628f5642f376b340bbf9ba7184bb1ea988b8e662d3ba2f652c",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/figures/query_type_performance.svg": "22294d91b7e21f1bf192bdbf2fbd602027af6aba6c6b96d126bf45d554b2c93d",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/figures/latency_vs_quality.svg": "f4b48ec7ccc15ef2efa053ecacff32f1a764b003b1788dd45f6f9c68ed26218c",
+    "results/sensitivity/hybrid_weight_ablation_runs/lexical_dominant/figures/cost_vs_quality.pdf": "66c22edfee04d6e62a5b54faa6daf3783c51f0fd0aef335354983091ceb70b7c"
+  }
+}

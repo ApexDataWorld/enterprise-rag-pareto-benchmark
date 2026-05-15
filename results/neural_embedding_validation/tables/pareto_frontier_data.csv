@@ -1,0 +1,6 @@
+variant,pareto_optimal,recall_at_k,faithfulness,hallucination_risk,total_latency_ms,total_cost,reason
+hybrid_k5_rerank_hash,True,0.8541666666666666,0.9980705928355861,0.03687911465686906,603.1,7.971071428571428e-05,non_dominated_tradeoff
+dense_neural_k5,True,0.9375,0.9867094889394454,0.04238883218936046,379.1,2.4231428571428572e-05,lowest_latency|lowest_cost
+dense_neural_k5_rerank,True,0.9375,0.987614932702032,0.043050293743679156,469.1,4.4444285714285716e-05,non_dominated_tradeoff
+hybrid_neural_k5_rerank,True,0.9196428571428571,0.9980757442153997,0.028750766259990238,603.1,7.9745e-05,highest_faithfulness|lowest_hallucination_risk
+hybrid_neural_k8_rerank,True,0.9434523809523809,0.9980757442153997,0.028750766259990238,670.6,9.838571428571429e-05,highest_recall

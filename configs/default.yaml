@@ -10,7 +10,7 @@ cost_model:
   rerank_cost_per_document: 0.000004
   dense_embedding_cost_per_query: 0.0000012
   dense_embedding_latency_ms: 12.0
-  hybrid_dense_fusion_latency_ms: 4.0
+  hybrid_dense_hash_fusion_latency_ms: 4.0
   retrieval_base_latency_ms: 35.0
   retrieval_latency_per_chunk_ms: 1.8
   retrieval_latency_per_topk_ms: 4.5
@@ -21,7 +21,7 @@ dense_retrieval:
   embedding_dimension: 96
   similarity: cosine
   index: local_in_memory_exhaustive_scan
-  score_fusion: hybrid_dense = 0.56 * lexical_cosine + 0.44 * dense_cosine + 0.12 * phrase_overlap
+  score_fusion: hybrid_dense_hash = 0.56 * lexical_cosine + 0.44 * dense_cosine + 0.12 * phrase_overlap
 variants:
   - name: lexical_k3
     retriever: lexical
@@ -53,18 +53,18 @@ variants:
     top_k: 10
     rerank: true
     generator: extractive_large
-  - name: dense_k5
-    retriever: dense
+  - name: dense_hash_k5
+    retriever: dense_hash
     top_k: 5
     rerank: false
     generator: extractive_small
-  - name: dense_k5_rerank
-    retriever: dense
+  - name: dense_hash_k5_rerank
+    retriever: dense_hash
     top_k: 5
     rerank: true
     generator: extractive_small
-  - name: hybrid_dense_k5_rerank
-    retriever: hybrid_dense
+  - name: hybrid_dense_hash_k5_rerank
+    retriever: hybrid_dense_hash
     top_k: 5
     rerank: true
     generator: extractive_medium

@@ -1,0 +1,62 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='980' height='540' viewBox='0 0 980 540'>
+<style>
+  .plot-bg { fill: #ffffff; stroke: #d7dde5; stroke-width: 1; }
+  .axis { stroke: #27313f; stroke-width: 1.4; }
+  .grid { stroke: #e6eaf0; stroke-width: 1; }
+  .point { opacity: 0.92; }
+  .frontier { fill: #0f766e; opacity: 1; }
+  .series-0 { fill: #2563eb; }
+  .series-1 { fill: #dc2626; }
+  .series-2 { fill: #7c3aed; }
+  .series-3 { fill: #ca8a04; }
+  .series-4 { fill: #0891b2; }
+  .series-5 { fill: #4b5563; }
+  .line { fill: none; stroke: #0f766e; stroke-width: 2.5; }
+  .title { font: 700 20px Arial, sans-serif; fill: #111827; }
+  .label { font: 600 13px Arial, sans-serif; fill: #374151; }
+  .legend-title { font: 700 13px Arial, sans-serif; fill: #111827; }
+  .legend { font: 12px Arial, sans-serif; fill: #111827; }
+</style>
+<text x='86' y='38' class='title'>Query Type Performance</text>
+<rect x='86' y='76' width='600' height='360' class='plot-bg'/>
+<line x1='86' y1='436' x2='686' y2='436' class='axis'/>
+<line x1='86' y1='76' x2='86' y2='436' class='axis'/>
+<line x1='236.00' y1='76' x2='236.00' y2='436' class='grid'/>
+<line x1='86' y1='166.00' x2='686' y2='166.00' class='grid'/>
+<line x1='386.00' y1='76' x2='386.00' y2='436' class='grid'/>
+<line x1='86' y1='256.00' x2='686' y2='256.00' class='grid'/>
+<line x1='536.00' y1='76' x2='536.00' y2='436' class='grid'/>
+<line x1='86' y1='346.00' x2='686' y2='346.00' class='grid'/>
+<line x1='686.00' y1='76' x2='686.00' y2='436' class='grid'/>
+<line x1='86' y1='436.00' x2='686' y2='436.00' class='grid'/>
+<circle cx='127.38' cy='100.83' r='7' class='point series-0'/>
+<circle cx='192.03' cy='100.83' r='7' class='point series-1'/>
+<circle cx='256.69' cy='100.83' r='7' class='point series-2'/>
+<circle cx='321.34' cy='100.83' r='7' class='point series-3'/>
+<circle cx='386.00' cy='133.25' r='7' class='point series-4'/>
+<circle cx='450.66' cy='100.83' r='7' class='point series-5'/>
+<circle cx='515.31' cy='135.40' r='7' class='point series-0'/>
+<circle cx='579.97' cy='100.83' r='7' class='point series-1'/>
+<circle cx='644.62' cy='411.17' r='7' class='point series-2'/>
+<text x='728' y='70' class='legend-title'>Variants</text>
+<circle cx='728' cy='90' r='7' class='point series-0'/>
+<text x='746' y='94' class='legend'>ambiguous</text>
+<circle cx='728' cy='120' r='7' class='point series-1'/>
+<text x='746' y='124' class='legend'>cloud_operations</text>
+<circle cx='728' cy='150' r='7' class='point series-2'/>
+<text x='746' y='154' class='legend'>compliance</text>
+<circle cx='728' cy='180' r='7' class='point series-3'/>
+<text x='746' y='184' class='legend'>cost_latency</text>
+<circle cx='728' cy='210' r='7' class='point series-4'/>
+<text x='746' y='214' class='legend'>fact_lookup</text>
+<circle cx='728' cy='240' r='7' class='point series-5'/>
+<text x='746' y='244' class='legend'>multi_hop</text>
+<circle cx='728' cy='270' r='7' class='point series-0'/>
+<text x='746' y='274' class='legend'>policy_reasoning</text>
+<circle cx='728' cy='300' r='7' class='point series-1'/>
+<text x='746' y='304' class='legend'>stale_context</text>
+<circle cx='728' cy='330' r='7' class='point series-2'/>
+<text x='746' y='334' class='legend'>vendor_risk</text>
+<text x='386.00' y='514' class='label'>query type index</text>
+<text x='24' y='256.00' class='label' transform='rotate(-90 24 256.00)'>faithfulness</text>
+</svg>

@@ -1,0 +1,15 @@
+baseline,candidate,metric,mean_delta,wins,losses,raw_p_value,bh_adjusted_p_value,significant_raw,significant_bh
+lexical_k5_rerank,hybrid_dense_hash_k5_rerank,recall_at_k,-0.03273809523809524,1.0,5.0,0.21875,0.30625,False,False
+lexical_k5_rerank,hybrid_dense_hash_k5_rerank,mrr,-0.022321428571428572,1.0,4.0,0.375,0.4772727272727273,False,False
+lexical_k5_rerank,hybrid_dense_hash_k5_rerank,ndcg_at_k,-0.028559598035211672,2.0,9.0,0.0654296875,0.1017795138888889,False,False
+lexical_k5_rerank,hybrid_dense_hash_k5_rerank,faithfulness,0.005355600849092124,39.0,9.0,1.5221826110689562e-05,3.0443652221379125e-05,True,True
+lexical_k5_rerank,hybrid_dense_hash_k5_rerank,hallucination_risk,-0.0041061405519098775,10.0,38.0,6.169640777642371e-05,0.0001079687136087415,True,True
+lexical_k5_rerank,hybrid_dense_hash_k5_rerank,latency_ms,146.0,56.0,0.0,2.7755575615628914e-17,9.71445146547012e-17,True,True
+lexical_k5_rerank,hybrid_dense_hash_k5_rerank,cost_usd,3.840285714285714e-05,56.0,0.0,2.7755575615628914e-17,9.71445146547012e-17,True,True
+lexical_k5_rerank,hybrid_k5_rerank,recall_at_k,0.008928571428571428,1.0,0.0,1.0,1.0,False,False
+lexical_k5_rerank,hybrid_k5_rerank,mrr,0.004464285714285714,1.0,1.0,1.0,1.0,False,False
+lexical_k5_rerank,hybrid_k5_rerank,ndcg_at_k,0.005572146414901011,2.0,2.0,1.0,1.0,False,False
+lexical_k5_rerank,hybrid_k5_rerank,faithfulness,0.005198686066143087,39.0,9.0,1.5221826110689562e-05,3.0443652221379125e-05,True,True
+lexical_k5_rerank,hybrid_k5_rerank,hallucination_risk,-0.009212479276326332,9.0,39.0,1.5221826110689562e-05,3.0443652221379125e-05,True,True
+lexical_k5_rerank,hybrid_k5_rerank,latency_ms,130.0,56.0,0.0,2.7755575615628914e-17,9.71445146547012e-17,True,True
+lexical_k5_rerank,hybrid_k5_rerank,cost_usd,3.7119285714285715e-05,56.0,0.0,2.7755575615628914e-17,9.71445146547012e-17,True,True

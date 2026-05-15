@@ -1,0 +1,22 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='980' height='540' viewBox='0 0 980 540'>
+<style>
+  .plot-bg { fill: #ffffff; stroke: #d7dde5; stroke-width: 1; }
+  .axis { stroke: #27313f; stroke-width: 1.4; }
+  .grid { stroke: #e6eaf0; stroke-width: 1; }
+  .point { opacity: 0.92; }
+  .frontier { fill: #0f766e; opacity: 1; }
+  .series-0 { fill: #2563eb; }
+  .series-1 { fill: #dc2626; }
+  .series-2 { fill: #7c3aed; }
+  .series-3 { fill: #ca8a04; }
+  .series-4 { fill: #0891b2; }
+  .series-5 { fill: #4b5563; }
+  .line { fill: none; stroke: #0f766e; stroke-width: 2.5; }
+  .title { font: 700 20px Arial, sans-serif; fill: #111827; }
+  .label { font: 600 13px Arial, sans-serif; fill: #374151; }
+  .legend-title { font: 700 13px Arial, sans-serif; fill: #111827; }
+  .legend { font: 12px Arial, sans-serif; fill: #111827; }
+</style>
+<text x='86' y='38' class='title'>Reranker Impact</text>
+<text x='86' y='100' class='legend'>No data for this plot.</text>
+</svg>

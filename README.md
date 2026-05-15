@@ -14,6 +14,23 @@ The default benchmark is intentionally dependency-free so the paper artifact can
 PYTHONPATH=src python -m rag_pareto.cli run --config configs/default.yaml
 ```
 
+Or use Make:
+
+```bash
+make test
+make reproduce-main
+make reproduce-chunk-sensitivity
+make reproduce-sensitivity
+make paper-artifacts
+```
+
+Optional neural validation uses Sentence Transformers and may download model weights:
+
+```bash
+python3 -m pip install '.[neural]'
+make reproduce-neural
+```
+
 Outputs are written to `results/default`:
 
 - `tables/query_metrics.csv`
@@ -90,4 +107,22 @@ docker run --rm -v "$PWD/results:/app/results" enterprise-rag-pareto-benchmark
 
 The bundled corpus is synthetic and spans security policy, access control, finance approvals, legal retention, HR benefits, IT runbooks, incident response, cost governance, RAG evaluation, data privacy, vendor risk, model governance, and cloud operations. It is suitable for validating the pipeline, result schema, plots, and reproducibility metadata. For manuscript claims about external systems or vendor models, replace the JSONL corpus/questions and add real backend adapters while preserving the same output tables.
 
-Dense retrieval is implemented as a deterministic local hashing-embedding provider with 96 dimensions, cosine similarity, and a local in-memory exhaustive scan. It gives the benchmark dense retrieval variants without requiring model downloads or API keys during artifact review. Do not describe the default repo as using MiniLM or FAISS unless the retrieval adapter is replaced.
+Dense-hash retrieval is implemented as a deterministic local hashing-embedding provider with 96 dimensions, cosine similarity, and a local in-memory exhaustive scan. It gives the benchmark dense-hash retrieval variants without requiring model downloads or API keys during artifact review. Do not describe the default repo as using MiniLM or FAISS unless the retrieval adapter is replaced.
+
+## Reproduction Targets
+
+- `make install`
+- `make test`
+- `make reproduce-main`
+- `make reproduce-neural`
+- `make reproduce-chunk-sensitivity`
+- `make reproduce-query-type`
+- `make reproduce-risk-sensitivity`
+- `make reproduce-cost-sensitivity`
+- `make reproduce-hybrid-ablation`
+- `make reproduce-sensitivity`
+- `make reproduce-all`
+- `make paper-tables`
+- `make paper-figures`
+- `make paper-pdf`
+- `make artifact-manifest`

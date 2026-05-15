@@ -38,7 +38,7 @@
 <circle cx='728' cy='90' r='7' class='point frontier'/>
 <text x='746' y='94' class='legend'>hybrid_k5_rerank Pareto</text>
 <circle cx='728' cy='120' r='7' class='point frontier'/>
-<text x='746' y='124' class='legend'>hybrid_dense_k5_rerank Pareto</text>
+<text x='746' y='124' class='legend'>hybrid_dense_hash_k5_rerank Pareto</text>
 <circle cx='728' cy='150' r='7' class='point frontier'/>
 <text x='746' y='154' class='legend'>hybrid_k8_rerank Pareto</text>
 <circle cx='728' cy='180' r='7' class='point frontier'/>

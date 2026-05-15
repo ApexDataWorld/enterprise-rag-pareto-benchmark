@@ -52,11 +52,11 @@
 <circle cx='728' cy='240' r='7' class='point frontier'/>
 <text x='746' y='244' class='legend'>hybrid_k10_large Pareto</text>
 <circle cx='728' cy='270' r='7' class='point series-0'/>
-<text x='746' y='274' class='legend'>dense_k5</text>
+<text x='746' y='274' class='legend'>dense_hash_k5</text>
 <circle cx='728' cy='300' r='7' class='point series-1'/>
-<text x='746' y='304' class='legend'>dense_k5_rerank</text>
+<text x='746' y='304' class='legend'>dense_hash_k5_rerank</text>
 <circle cx='728' cy='330' r='7' class='point frontier'/>
-<text x='746' y='334' class='legend'>hybrid_dense_k5_rerank Pareto</text>
+<text x='746' y='334' class='legend'>hybrid_dense_hash_k5_rerank Pareto</text>
 <text x='386.00' y='514' class='label'>cost usd</text>
 <text x='24' y='256.00' class='label' transform='rotate(-90 24 256.00)'>hallucination risk</text>
 </svg>

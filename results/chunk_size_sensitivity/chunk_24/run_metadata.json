@@ -1,0 +1,84 @@
+{
+  "created_at_utc": "2026-05-15T14:10:21.887068+00:00",
+  "python": "3.13.3 (main, Apr  8 2025, 13:54:08) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "platform": "macOS-15.7.4-arm64-arm-64bit-Mach-O",
+  "git_commit": "ee2e06454b535979624b4bad3e630471600c0583",
+  "config": {
+    "seed": 42,
+    "corpus_path": "data/corpus/enterprise_docs.jsonl",
+    "questions_path": "data/questions/enterprise_qa.jsonl",
+    "output_dir": "results/default",
+    "chunk": {
+      "size_tokens": 24,
+      "overlap_tokens": 4
+    },
+    "cost_model": {
+      "retrieval_cost_per_chunk": 1.5e-08,
+      "rerank_cost_per_document": 4e-06,
+      "dense_embedding_cost_per_query": 1.2e-06,
+      "dense_embedding_latency_ms": 12.0,
+      "hybrid_dense_hash_fusion_latency_ms": 4.0,
+      "retrieval_base_latency_ms": 35.0,
+      "retrieval_latency_per_chunk_ms": 1.8,
+      "retrieval_latency_per_topk_ms": 4.5,
+      "rerank_latency_per_document_ms": 18.0
+    },
+    "dense_retrieval": {
+      "provider": "deterministic_hashing_embedding_v1",
+      "model_name": "local_hashing_embedding_v1",
+      "embedding_dimension": 96,
+      "similarity": "cosine",
+      "index": "local_in_memory_exhaustive_scan",
+      "score_fusion": "hybrid_dense_hash = 0.56 * lexical_cosine + 0.44 * dense_cosine + 0.12 * phrase_overlap"
+    },
+    "variants": [
+      {
+        "name": "lexical_k5_rerank",
+        "retriever": "lexical",
+        "top_k": 5,
+        "rerank": true,
+        "generator": "extractive_small"
+      },
+      {
+        "name": "hybrid_k5_rerank",
+        "retriever": "hybrid",
+        "top_k": 5,
+        "rerank": true,
+        "generator": "extractive_medium"
+      },
+      {
+        "name": "hybrid_dense_hash_k5_rerank",
+        "retriever": "hybrid_dense_hash",
+        "top_k": 5,
+        "rerank": true,
+        "generator": "extractive_medium"
+      }
+    ]
+  },
+  "artifacts": {
+    "results/chunk_size_sensitivity/chunk_24/tables/query_metrics.csv": "4ef9dd908602db35c52772171479be22d05bf9fd06808dcf09d227da62a4363f",
+    "results/chunk_size_sensitivity/chunk_24/tables/summary_metrics.csv": "4f098934de25cbb110b1ed2f2a0a1585a8acf89391aff9e4081df2cc8164ce03",
+    "results/chunk_size_sensitivity/chunk_24/tables/statistical_comparisons.csv": "e19a5804ba3dcec6052b0e16c3e34afe452dc4a6f97d1f0ab20ac2e1c636dd83",
+    "results/chunk_size_sensitivity/chunk_24/tables/confidence_intervals.csv": "71a102e9124cb34cd7fd6a4ea87e410721b4a1681d2bb1423ef6cd714c74e3ac",
+    "results/chunk_size_sensitivity/chunk_24/tables/query_type_summary.csv": "4287905df88282c3f2bcaef5f8a4805ed7667de9982bbbde2d62eb4315df36ee",
+    "results/chunk_size_sensitivity/chunk_24/tables/pareto_frontier_data.csv": "100d9e0a9a5351bfe87239f938a3de981bf67f0d46e895a4cc2a23f6ff77c99c",
+    "results/chunk_size_sensitivity/chunk_24/tables/final_latex_table_values.tex": "e77282a04f0391a9cbfaaae04d8d2b9291d4b5c75ee66cd10951f59e3e0ebd35",
+    "results/chunk_size_sensitivity/chunk_24/final_result_summary.md": "0c2681a033aacb2eb8c20a2f988e431b6910e128c816142b4260b4f072d03e29",
+    "results/chunk_size_sensitivity/chunk_24/v3_consistency_notes.md": "c41878ad83da56b3c2dc19c1cac783c2a4fb221f5cb64e1fd950bb4732642258",
+    "results/chunk_size_sensitivity/chunk_24/traces/retrieval_traces.json": "9b12de5b254782e0efeeb19f144d1ee3579e06b1bc7f3db6d94500f94ed7f47e",
+    "results/chunk_size_sensitivity/chunk_24/figures/topk_sensitivity.svg": "6554850a35e1cf3fc6f40462f1c2ca632b77f9995f94f8d004338fa9fcde314b",
+    "results/chunk_size_sensitivity/chunk_24/figures/risk_vs_faithfulness.svg": "fc915d12ee810065460cb2c0800bc62d72e493155f130ea3989ab47b1b3e3092",
+    "results/chunk_size_sensitivity/chunk_24/figures/reranker_impact.pdf": "0f77dceaf42f6f6a5d75a453af5171f85e29d785bfca186cca109fc9e81fffae",
+    "results/chunk_size_sensitivity/chunk_24/figures/topk_sensitivity.pdf": "7c7fc352cff6a9f1e0cd5603598478a1b64351778ab9d32d0e62fa8ef405eaa9",
+    "results/chunk_size_sensitivity/chunk_24/figures/risk_vs_faithfulness.pdf": "c54dd5f84669c199d9cd52599b35094b15e72165a573f092f49e79ebe4f813fb",
+    "results/chunk_size_sensitivity/chunk_24/figures/reranker_impact.svg": "199d0dc5b5fef8845531a162e45ab8dbbd51e25270e218ad7db8d30aeff9c734",
+    "results/chunk_size_sensitivity/chunk_24/figures/pareto_frontier.pdf": "90459203d3f73e7502d728c8b9d291ae97bf3c00765f7b282dc8937d9d091b73",
+    "results/chunk_size_sensitivity/chunk_24/figures/query_type_performance.pdf": "6b697520f28c90af42f12b063b0a5315f67f23d2b5df423889f32e7065b4601a",
+    "results/chunk_size_sensitivity/chunk_24/figures/cost_vs_quality.svg": "7388ba0ad4fb3d291d27c73fa1109651d2a8126c1b2f1fe7e1a3d4a81b476a8a",
+    "results/chunk_size_sensitivity/chunk_24/figures/latency_vs_quality.pdf": "2e97f12f770790553073a7b6eb18de227e8992ee5ac4b8cc957cb9a230f60af1",
+    "results/chunk_size_sensitivity/chunk_24/figures/pareto_frontier.svg": "45e8d81fe74aabfa3b7d912f01e3c21cfc47ca6784e87f901782440dcddea65d",
+    "results/chunk_size_sensitivity/chunk_24/figures/query_type_performance.svg": "0f535b2333fde9e2dc410de2de5c8d4432ac8ac9f13ffb557cbe3872846b698a",
+    "results/chunk_size_sensitivity/chunk_24/figures/latency_vs_quality.svg": "ff238c3bb78c927f151ea2d3216b9c591f8b6fe8eb7039ba8ae2b00ec7580d2d",
+    "results/chunk_size_sensitivity/chunk_24/figures/cost_vs_quality.pdf": "9cd071d58301a84753a76fd64beda1797e1bd36b6537c02d9784a5b353386514"
+  }
+}

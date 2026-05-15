@@ -1,0 +1,2 @@
+variant,pareto_optimal,recall_at_k,faithfulness,hallucination_risk,total_latency_ms,total_cost,reason
+hybrid_dense_hash_k5_rerank,True,0.8392857142857143,0.9981338677171918,0.04308798598382534,603.1,7.973214285714285e-05,lowest_latency|lowest_cost|highest_recall|highest_faithfulness|lowest_hallucination_risk
