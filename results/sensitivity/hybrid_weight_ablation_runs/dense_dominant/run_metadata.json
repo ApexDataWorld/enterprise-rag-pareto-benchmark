@@ -1,8 +1,8 @@
 {
-  "created_at_utc": "2026-05-15T14:10:24.037137+00:00",
+  "created_at_utc": "2026-05-15T14:41:27.478128+00:00",
   "python": "3.13.3 (main, Apr  8 2025, 13:54:08) [Clang 17.0.0 (clang-1700.0.13.3)]",
   "platform": "macOS-15.7.4-arm64-arm-64bit-Mach-O",
-  "git_commit": "ee2e06454b535979624b4bad3e630471600c0583",
+  "git_commit": "da963dc04dde7b377e68a478d824b776939a9016",
   "config": {
     "seed": 42,
     "corpus_path": "data/corpus/enterprise_docs.jsonl",

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software artifact, please cite it using the metadata from this file."
+title: "Enterprise RAG Pareto Benchmark"
+type: software
+authors:
+  - family-names: "Gupta"
+    given-names: "Saurabh"
+repository-code: "https://github.com/ApexDataWorld/enterprise-rag-pareto-benchmark"
+url: "https://github.com/ApexDataWorld/enterprise-rag-pareto-benchmark"
+abstract: "A reproducible benchmark for selecting enterprise retrieval-augmented generation configurations under competing objectives including retrieval quality, faithfulness, latency, cost, and hallucination risk."
+keywords:
+  - retrieval-augmented generation
+  - RAG
+  - benchmarking
+  - Pareto optimization
+  - hallucination risk
+  - enterprise AI
+license: "Apache-2.0"
+version: "1.0.0"
+date-released: "2026-05-15"

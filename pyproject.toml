@@ -4,16 +4,16 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "enterprise-rag-pareto-benchmark"
-version = "0.1.0"
+version = "1.0.0"
 description = "Reproducible Enterprise RAG Pareto benchmark for retrieval quality, latency, cost, and hallucination risk."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "Apache-2.0"}
-authors = [{name = "Paper 5 authors"}]
+authors = [{name = "Saurabh Gupta"}]
 dependencies = []
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0", "pyyaml>=6.0", "matplotlib>=3.8", "pandas>=2.0"]
+dev = ["pytest>=8.0", "pyyaml>=6.0", "matplotlib>=3.8", "pandas>=2.0", "ruff>=0.5", "black>=24.0"]
 neural = ["sentence-transformers>=2.7"]
 
 [project.scripts]
@@ -21,3 +21,19 @@ rag-pareto = "rag_pareto.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+ignore = []
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]

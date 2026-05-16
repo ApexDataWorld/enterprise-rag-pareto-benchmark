@@ -1,37 +1,125 @@
 # Enterprise RAG Pareto Benchmark
 
-Reproducible benchmark code for Paper 5, **A Reproducible Benchmark for Enterprise RAG: Pareto Trade-offs Among Retrieval Quality, Latency, Cost, and Hallucination Risk**.
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![License](https://img.shields.io/badge/license-Apache--2.0-green)
+![CI](https://github.com/ApexDataWorld/enterprise-rag-pareto-benchmark/actions/workflows/ci.yml/badge.svg)
 
-The repository runs a deterministic enterprise RAG experiment pipeline:
+A reproducible benchmark for selecting enterprise retrieval-augmented generation
+(RAG) configurations under competing objectives: retrieval quality, answer
+faithfulness, latency, cost, and hallucination risk.
 
-`ingestion -> chunking -> embeddings/features -> vector-style retrieval -> reranking -> extractive generation -> evaluation -> plots/tables -> reproducibility metadata`
+Enterprise RAG systems rarely have a single best configuration. A retriever with
+better recall may increase latency or cost; a lower-cost configuration may
+increase hallucination risk; and reranking may improve evidence quality while
+adding operational overhead. This repository provides a reproducible benchmark
+for comparing those trade-offs and identifying Pareto-optimal configurations.
 
-The default benchmark is intentionally dependency-free so the paper artifact can run in a clean Python environment. Optional scientific packages are listed in `requirements.txt` for notebook analysis or alternate plotting.
+This repository is a research benchmark and reproducibility package, not a
+production RAG platform.
 
-## Quick Start
+## Overview
+
+The benchmark runs a deterministic enterprise RAG evaluation pipeline:
+
+```text
+ingestion -> chunking -> features/embeddings -> retrieval -> reranking
+-> extractive generation -> evaluation -> plots/tables -> metadata
+```
+
+The default experiment is intentionally dependency-light. It uses a synthetic
+enterprise corpus and deterministic lexical and dense-hash retrieval components
+so reviewers can reproduce the main results without external API keys, hosted
+vector databases, model-provider services, or neural model downloads.
+
+Optional validation runs add Sentence Transformers neural embeddings and
+sensitivity studies, but those are separate from the dependency-free default
+benchmark.
+
+## Why this benchmark exists
+
+Enterprise RAG configuration is a systems optimization problem, not a
+single-metric leaderboard problem. Different applications optimize for different
+constraints:
+
+- internal search may prioritize latency and cost;
+- compliance workflows may prioritize faithfulness and lower hallucination risk;
+- knowledge assistants may prioritize recall;
+- regulated environments may prioritize reproducibility and auditability.
+
+This benchmark makes those trade-offs explicit by evaluating each configuration
+across retrieval quality, answer-grounding metrics, estimated latency, estimated
+cost, statistical comparisons, and Pareto-frontier labels.
+
+## What the benchmark evaluates
+
+The default benchmark evaluates deterministic configurations including:
+
+- lexical retrieval at different top-k settings;
+- reranked lexical retrieval;
+- hybrid lexical and phrase-overlap retrieval;
+- deterministic `dense_hash_*` retrieval;
+- hybrid retrieval that combines lexical, dense-hash, and phrase-overlap scores.
+
+Optional experiments evaluate:
+
+- Sentence Transformers neural embeddings using
+  `sentence-transformers/all-MiniLM-L6-v2`;
+- chunk-size sensitivity;
+- query-type performance;
+- hallucination-risk weighting sensitivity;
+- hybrid-weight ablation;
+- latency/cost sensitivity.
+
+Pareto-optimality is computed separately for each experiment set. See
+`results/default/tables/pareto_frontier_data.csv` for the default deterministic
+benchmark and `results/neural_embedding_validation/tables/pareto_frontier_data.csv`
+for optional neural embedding validation.
+
+## Repository structure
+
+```text
+configs/              # Versioned benchmark configurations
+data/                 # Synthetic enterprise corpus and question set
+src/rag_pareto/       # Benchmark implementation
+scripts/              # Reproduction and artifact-generation scripts
+results/              # Generated tables, figures, traces, and metadata
+tests/                # Unit tests
+.github/workflows/    # CI workflows
+docs/                 # User and contributor documentation
+paper/tables/         # Paper-facing generated table artifacts, if present
+```
+
+## Quick start
+
+```bash
+git clone https://github.com/ApexDataWorld/enterprise-rag-pareto-benchmark.git
+cd enterprise-rag-pareto-benchmark
+
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install -e .
+
+make test
+make reproduce-main
+```
+
+Direct Python command:
 
 ```bash
 PYTHONPATH=src python -m rag_pareto.cli run --config configs/default.yaml
 ```
 
-Or use Make:
+## Reproducing the main results
+
+Run:
 
 ```bash
-make test
 make reproduce-main
-make reproduce-chunk-sensitivity
-make reproduce-sensitivity
-make paper-artifacts
 ```
 
-Optional neural validation uses Sentence Transformers and may download model weights:
-
-```bash
-python3 -m pip install '.[neural]'
-make reproduce-neural
-```
-
-Outputs are written to `results/default`:
+The main deterministic experiment writes outputs to `results/default/`,
+including:
 
 - `tables/query_metrics.csv`
 - `tables/summary_metrics.csv`
@@ -39,90 +127,222 @@ Outputs are written to `results/default`:
 - `tables/confidence_intervals.csv`
 - `tables/query_type_summary.csv`
 - `tables/pareto_frontier_data.csv`
-- `tables/final_latex_table_values.tex`
-- `figures/latency_vs_quality.svg`
-- `figures/latency_vs_quality.pdf`
-- `figures/cost_vs_quality.svg`
-- `figures/cost_vs_quality.pdf`
-- `figures/pareto_frontier.svg`
-- `figures/pareto_frontier.pdf`
-- `figures/reranker_impact.svg`
-- `figures/reranker_impact.pdf`
-- `figures/risk_vs_faithfulness.svg`
-- `figures/risk_vs_faithfulness.pdf`
-- `figures/topk_sensitivity.svg`
-- `figures/topk_sensitivity.pdf`
-- `figures/query_type_performance.svg`
-- `figures/query_type_performance.pdf`
+- `figures/*.pdf`
+- `figures/*.svg`
 - `traces/retrieval_traces.json`
 - `run_metadata.json`
 - `final_result_summary.md`
 - `v3_consistency_notes.md`
 
-## Metrics
+Current checked-in default results report 9 evaluated variants and 7
+Pareto-optimal variants. This claim is supported by
+`results/default/tables/pareto_frontier_data.csv` and
+`results/default/final_result_summary.md`.
 
-The benchmark reports:
+From `results/default/tables/summary_metrics.csv`, the checked-in default run
+currently reports:
 
-- Retrieval quality: `recall_at_k`, `mrr`, `ndcg_at_k`
-- Context quality: `context_precision`, `context_recall`
-- Generation risk: `faithfulness`, `answer_term_coverage`, `hallucination_risk`
-- System trade-offs: `latency_ms`, `cost_usd`, component cost, and component latency
-- Pareto flag: `pareto_optimal`
-- Bootstrap confidence intervals and Benjamini-Hochberg adjusted p-values
+| Result | Variant | Value |
+|---|---|---:|
+| Lowest latency | `lexical_k3` | 358.1 ms |
+| Lowest cost | `lexical_k3` | 0.00002021 USD |
+| Highest Recall@k | `hybrid_k8_rerank`, `hybrid_k10_large` | 0.9167 |
+| Highest faithfulness | `hybrid_k10_large` | 1.0000 |
+| Lowest hallucination risk | `hybrid_dense_hash_k5_rerank` | 0.0369 |
 
-## Configuration
-
-Edit `configs/default.yaml` to change:
-
-- fixed seed
-- corpus and question files
-- chunk size and overlap
-- retriever type
-- top-k setting
-- reranker on/off
-- generation profile
-- transparent cost and latency constants
-- output directory
-
-## Environment Variables
-
-No `.env` file is required for the default benchmark. It runs locally with the Python standard library and the bundled synthetic dataset.
-
-For real external embedding, vector database, or LLM backends, copy `.env.example` to `.env` and fill in only the services you use. `.env` is ignored by git so secrets stay local.
-
-## Tests
+To regenerate a README-safe summary from the checked-in artifacts:
 
 ```bash
-PYTHONPATH=src python -m unittest discover -s tests
+PYTHONPATH=src python3 scripts/summarize_checked_in_results.py
 ```
 
-## Docker
+## Optional validation and sensitivity studies
+
+Install optional neural dependencies only if you want to run neural validation:
 
 ```bash
-docker build -t enterprise-rag-pareto-benchmark .
-docker run --rm -v "$PWD/results:/app/results" enterprise-rag-pareto-benchmark
+python3 -m pip install -e '.[neural]'
+make reproduce-neural
 ```
 
-## Artifact Notes
+Other experiment targets:
 
-The bundled corpus is synthetic and spans security policy, access control, finance approvals, legal retention, HR benefits, IT runbooks, incident response, cost governance, RAG evaluation, data privacy, vendor risk, model governance, and cloud operations. It is suitable for validating the pipeline, result schema, plots, and reproducibility metadata. For manuscript claims about external systems or vendor models, replace the JSONL corpus/questions and add real backend adapters while preserving the same output tables.
+```bash
+make reproduce-chunk-sensitivity
+make reproduce-query-type
+make reproduce-risk-sensitivity
+make reproduce-hybrid-weight-ablation
+make reproduce-latency-cost-sensitivity
+make reproduce-sensitivity
+make paper-artifacts
+make artifact-manifest
+```
 
-Dense-hash retrieval is implemented as a deterministic local hashing-embedding provider with 96 dimensions, cosine similarity, and a local in-memory exhaustive scan. It gives the benchmark dense-hash retrieval variants without requiring model downloads or API keys during artifact review. Do not describe the default repo as using MiniLM or FAISS unless the retrieval adapter is replaced.
+`make reproduce-all` runs the dependency-free main benchmark, query-type
+analysis, chunk-size sensitivity, sensitivity studies, and paper artifact
+generation. It does not run neural validation because neural validation requires
+optional model dependencies.
 
-## Reproduction Targets
+## Key outputs
 
-- `make install`
-- `make test`
-- `make reproduce-main`
-- `make reproduce-neural`
-- `make reproduce-chunk-sensitivity`
-- `make reproduce-query-type`
-- `make reproduce-risk-sensitivity`
-- `make reproduce-cost-sensitivity`
-- `make reproduce-hybrid-ablation`
-- `make reproduce-sensitivity`
-- `make reproduce-all`
-- `make paper-tables`
-- `make paper-figures`
-- `make paper-pdf`
-- `make artifact-manifest`
+| Output | Purpose |
+|---|---|
+| `summary_metrics.csv` | Variant-level quality, risk, latency, cost, and Pareto labels |
+| `query_metrics.csv` | Per-query metrics used for paired statistical comparisons |
+| `statistical_comparisons.csv` | Paired tests against the configured baseline |
+| `confidence_intervals.csv` | Bootstrap intervals for selected metrics |
+| `pareto_frontier_data.csv` | Dominated/non-dominated configuration labels |
+| `query_type_summary.csv` | Mean metrics by query type and variant |
+| `retrieval_traces.json` | Retrieved chunks, expected evidence, and generated answers |
+| `run_metadata.json` | Environment, config, artifact hashes, and reproducibility metadata |
+| `results/run_metadata/final_artifact_manifest.json` | Repository-level artifact manifest with hashes |
+
+## Interpreting the results
+
+Pareto-optimality is computed within each experiment set and should be
+interpreted as a trade-off result, not as a universal ranking of RAG systems. A
+Pareto-optimal configuration is not necessarily globally best. It means that,
+within the evaluated experiment set, no other configuration improves all
+selected objectives simultaneously under the implemented dominance rule.
+
+Read:
+
+- `docs/RESULTS_INTERPRETATION.md` for metrics and output files;
+- `docs/ARCHITECTURE.md` for the pipeline and Pareto rule;
+- `results/default/v3_consistency_notes.md` for default-run implementation notes.
+
+## Default benchmark scope
+
+The default benchmark uses:
+
+- a synthetic enterprise corpus;
+- deterministic chunking;
+- lexical and deterministic dense-hash retrieval;
+- optional reranking;
+- deterministic extractive generation;
+- transparent estimated cost and latency constants;
+- automatic proxy hallucination-risk scoring.
+
+The synthetic corpus and extractive generation choices make the artifact
+reproducible but limit direct generalization to production deployments. The
+benchmark is not a substitute for domain-specific evaluation, human factuality
+assessment, production telemetry, or security review.
+
+Dense-hash retrieval uses a deterministic local hashing-embedding provider with
+96 dimensions, cosine similarity, and a local in-memory exhaustive scan. It is
+not Sentence Transformers, MiniLM, OpenAI embeddings, Cohere embeddings, E5, or
+FAISS. Do not describe the dependency-free default benchmark as using MiniLM or
+FAISS unless the retrieval adapter is changed.
+
+## Optional neural embedding validation
+
+The optional neural validation path uses Sentence Transformers with
+`sentence-transformers/all-MiniLM-L6-v2` when the neural extra is installed. This
+is separate from the dependency-free default benchmark.
+
+```bash
+python3 -m pip install -e '.[neural]'
+make reproduce-neural
+```
+
+Outputs are written to `results/neural_embedding_validation/`. The checked-in
+neural validation currently evaluates 5 variants, and
+`results/neural_embedding_validation/tables/pareto_frontier_data.csv` should be
+used for neural Pareto labels. The neural validation is intended to test whether
+the qualitative Pareto framing remains useful with a real open-source sentence
+embedding model. It does not prove production superiority.
+
+## Configuration guide
+
+The default configuration is `configs/default.yaml`. Common keys include:
+
+- `seed`
+- `corpus_path`
+- `questions_path`
+- `output_dir`
+- `chunk.size_tokens`
+- `chunk.overlap_tokens`
+- `cost_model`
+- `dense_retrieval`
+- `variants`
+
+Each variant defines a unique `name`, `retriever`, `top_k`, `rerank`, and
+`generator`. See `docs/CONFIGURATION.md` for the full configuration guide.
+
+## Using a custom corpus
+
+The benchmark reads JSONL documents and queries. A minimal document row is:
+
+```json
+{"id": "doc_001", "title": "Example Policy", "text": "Document text..."}
+```
+
+A minimal query row is:
+
+```json
+{
+  "id": "q_001",
+  "question": "What is the policy for escalation?",
+  "relevant_doc_ids": ["doc_001"],
+  "relevant_chunk_ids": ["doc_001::c000"],
+  "answer_terms": ["escalation", "policy"],
+  "query_type": "fact_lookup"
+}
+```
+
+Chunk-level relevance labels depend on the chunking configuration. If you change
+chunk size or overlap, review `relevant_chunk_ids` or use document-level labels.
+See `docs/CUSTOM_CORPUS.md`.
+
+## Paper and citation
+
+A paper manuscript accompanies this repository. Until a DOI or proceedings link
+is available, cite the software repository using `CITATION.cff`.
+
+```bibtex
+@misc{gupta2026enterprise_rag_pareto,
+  author = {Gupta, Saurabh},
+  title = {Enterprise RAG Pareto Benchmark},
+  year = {2026},
+  howpublished = {\url{https://github.com/ApexDataWorld/enterprise-rag-pareto-benchmark}},
+  note = {Software artifact and reproducibility package}
+}
+```
+
+No DOI, proceedings link, or ACM artifact badge is claimed in this repository
+unless it is added later from a verified source.
+
+## Reproducibility checklist
+
+For ACM-style artifact review, start with:
+
+```bash
+make test
+make reproduce-main
+make artifact-manifest
+```
+
+Then inspect:
+
+- `results/default/tables/summary_metrics.csv`
+- `results/default/tables/pareto_frontier_data.csv`
+- `results/default/run_metadata.json`
+- `results/run_metadata/final_artifact_manifest.json`
+
+See `docs/REPRODUCIBILITY.md` and `RELEASE_CHECKLIST.md`.
+
+## Development and contributing
+
+Development setup:
+
+```bash
+python3 -m pip install -e '.[dev]'
+make test
+```
+
+Contribution guidelines are in `CONTRIBUTING.md`. Make sure all result claims in
+documentation are backed by regenerated artifacts under `results/`.
+
+## License
+
+Apache-2.0. See `LICENSE`.
